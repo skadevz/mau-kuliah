@@ -14,3 +14,5 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('peringkat-universitas', 'PeringkatUniversitasController@index')->name('peringkat_universitas');

@@ -24,7 +24,7 @@
                                 <a class="nav-link" href="cource.html">Courses</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="blog.html">Blog</a>
+                                <a class="nav-link" href="blog.html">Peringkat Universitas</a>
                             </li>
                             <li class="nav-item dropdown">
                                 <a class="nav-link dropdown-toggle" href="blog.html" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

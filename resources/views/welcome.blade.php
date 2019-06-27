@@ -9,8 +9,8 @@
                         <!--<h5>Every child yearns to learn</h5>-->
                         <h1>Our Advance Educator Learning System</h1>
                         <p>
-                            Fifth saying upon divide divide rule for deep their female all hath 
-                            brind mid Days and beast greater grass signs abundantly have greater also use 
+                            Fifth saying upon divide divide rule for deep their female all hath
+                            brind mid Days and beast greater grass signs abundantly have greater also use
                             over face earth days years under brought moveth she star
                         </p>
                         <div class="row">
