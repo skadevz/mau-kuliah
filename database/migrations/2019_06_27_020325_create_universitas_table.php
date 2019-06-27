@@ -13,18 +13,18 @@ class CreateUniversitasTable extends Migration
      */
     public function up()
     {
-        Schema::create('universitas', function (Blueprint $table) {
+        Schema::create('m_universitas', function (Blueprint $table) {
             $table->bigIncrements('id_universitas');
             $table->string('nama_universitas');
+            $table->char('akreditasi_universitas',1);
             $table->string('alamat_universitas');
             $table->integer('id_kecamatan');
             $table->integer('id_kota');
             $table->integer('id_provinsi');
-            $table->string('telepon_universitas');
-            $table->string('fax_universitas');
-            $table->string('email_universitas');
-            $table->string('website_universitas');
-            $table->char('akreditasi_universitas',1);
+            $table->string('telepon_universitas')->nullable();
+            $table->string('fax_universitas')->nullable();
+            $table->string('email_universitas')->nullable();
+            $table->string('website_universitas')->nullable();
             $table->timestamps();
         });
     }
@@ -36,6 +36,6 @@ class CreateUniversitasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('universitas');
+        Schema::dropIfExists('m_universitas');
     }
 }

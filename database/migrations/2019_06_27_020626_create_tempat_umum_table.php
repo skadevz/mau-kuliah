@@ -13,7 +13,7 @@ class CreateTempatUmumTable extends Migration
      */
     public function up()
     {
-        Schema::create('tempat_umum', function (Blueprint $table) {
+        Schema::create('tbl_tempat_umum', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateTempatUmumTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tempat_umum');
+        Schema::dropIfExists('tbl_tempat_umum');
     }
 }

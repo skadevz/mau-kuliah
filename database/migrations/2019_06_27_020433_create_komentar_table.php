@@ -13,7 +13,7 @@ class CreateKomentarTable extends Migration
      */
     public function up()
     {
-        Schema::create('komentar', function (Blueprint $table) {
+        Schema::create('tbl_komentar', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateKomentarTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('komentar');
+        Schema::dropIfExists('tbl_komentar');
     }
 }

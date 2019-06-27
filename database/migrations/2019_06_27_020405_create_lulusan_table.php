@@ -13,7 +13,7 @@ class CreateLulusanTable extends Migration
      */
     public function up()
     {
-        Schema::create('lulusan', function (Blueprint $table) {
+        Schema::create('tbl_lulusan', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->timestamps();
         });
@@ -26,6 +26,6 @@ class CreateLulusanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('lulusan');
+        Schema::dropIfExists('tbl_lulusan');
     }
 }

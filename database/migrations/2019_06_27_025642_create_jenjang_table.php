@@ -13,10 +13,9 @@ class CreateJenjangTable extends Migration
      */
     public function up()
     {
-        Schema::create('jenjang', function (Blueprint $table) {
+        Schema::create('m_jenjang', function (Blueprint $table) {
             $table->bigIncrements('id_jenjang');
-            $table->integer('id_jurusan');
-            $table->string('jenjang',5);
+            $table->string('nama_jenjang',5);
             $table->timestamps();
         });
     }
@@ -28,6 +27,6 @@ class CreateJenjangTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jenjang');
+        Schema::dropIfExists('m_jenjang');
     }
 }

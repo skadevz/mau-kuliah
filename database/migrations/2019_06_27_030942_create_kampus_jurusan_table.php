@@ -13,7 +13,7 @@ class CreateKampusJurusanTable extends Migration
      */
     public function up()
     {
-        Schema::create('kampus_jurusan', function (Blueprint $table) {
+        Schema::create('tbl_kampus_jurusan', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->integer('id_universitas');
             $table->integer('id_jurusan');
@@ -29,6 +29,6 @@ class CreateKampusJurusanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('kampus_jurusan');
+        Schema::dropIfExists('tbl_kampus_jurusan');
     }
 }

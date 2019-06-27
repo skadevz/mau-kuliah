@@ -13,7 +13,7 @@ class CreateJurusanTable extends Migration
      */
     public function up()
     {
-        Schema::create('jurusan', function (Blueprint $table) {
+        Schema::create('m_jurusan', function (Blueprint $table) {
             $table->bigIncrements('id_jurusan');
             $table->integer('id_universitas');
             $table->string('nama_jurusan',100);
@@ -29,6 +29,6 @@ class CreateJurusanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('jurusan');
+        Schema::dropIfExists('m_jurusan');
     }
 }
