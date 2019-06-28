@@ -16,6 +16,10 @@
         <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}" />
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
         <link rel="stylesheet" href="{{ asset('assets/css/button.css') }}" />
+        <link href="https://fonts.googleapis.com/css?family=Lato&display=swap" rel="stylesheet">
+        <style media="screen">
+            * { font-family: Lato!important; }
+        </style>
     </head>
 
     <body>
