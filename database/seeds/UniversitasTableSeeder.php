@@ -16,20 +16,44 @@ class UniversitasTableSeeder extends Seeder
             'id_universitas' => 1,
             'nama_universitas' => 'Universitas Bina Nusantara',
             'akreditasi_universitas' => 'A',
-            'alamat_universitas' => 'Alamat',
+            'alamat_universitas' => 'Jl. Airlangga No. 4 - 6, Airlangga, Gubeng, Jawa Timur 60115',
             'id_kecamatan' => '1101010',
             'id_kota' => '1101',
-            'id_provinsi' => '11'
+            'id_provinsi' => '11',
+            'logo' => 'binus.png'
         ]);
 
         Universitas::create([
             'id_universitas' => 2,
-            'nama_universitas' => 'Universitas Indonesia',
+            'nama_universitas' => 'Institut Teknologi Sepuluh November',
             'akreditasi_universitas' => 'A',
-            'alamat_universitas' => 'Alamat',
+            'alamat_universitas' => 'Kampus ITS Sukolilo, Jawa Timur 60111',
             'id_kecamatan' => '1101010',
             'id_kota' => '1101',
-            'id_provinsi' => '11'
+            'id_provinsi' => '11',
+            'logo' => 'its.png'
+        ]);
+
+        Universitas::create([
+            'id_universitas' => 3,
+            'nama_universitas' => 'Universitas Telkom',
+            'akreditasi_universitas' => 'A',
+            'alamat_universitas' => 'Jl. Raya Darmaga Kampus IPB Darmaga, Jawa Barat 16680',
+            'id_kecamatan' => '1101010',
+            'id_kota' => '1101',
+            'id_provinsi' => '11',
+            'logo' => 'tu.png'
+        ]);
+
+        Universitas::create([
+            'id_universitas' => 4,
+            'nama_universitas' => 'Universitas Telkom',
+            'akreditasi_universitas' => 'A',
+            'alamat_universitas' => 'Jl. Ganesha 10, Jawa Barat 40132',
+            'id_kecamatan' => '1101010',
+            'id_kota' => '1101',
+            'id_provinsi' => '11',
+            'logo' => 'its.png'
         ]);
     }
 }

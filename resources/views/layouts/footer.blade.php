@@ -5,7 +5,7 @@
             <div class="row footer_widget_inner">
                 <div class="single-footer-widget col-lg-4 col-sm-6">
                     <aside class="f_widget f_about_widget">
-                        <img src="{{asset('assets/img/logo_nama.png')}}" alt="">
+                        <img height="100px" src="{{asset('assets/img/logo.png')}}" alt="">
                         <p>
                             Mengedepankan profesionalitas, kejujuran dan etika dalam
                             menjalankan bisnis serta berkomitmen tinggi terhadap kesepakan bisnis. Mewujudkan perusahaan yang berjiwa “inovator” untuk memperbaiki kondisi bangsa.
@@ -43,7 +43,7 @@
                             </li>
                             <li class="footer_contact_item">
                                 <div class="footer_contact_icon">
-                                    <img src="<{{asset('assets/img/email.png')}}" alt="https://www.flaticon.com/authors/lucy-g">
+                                    <img src="{{asset('assets/img/email.png')}}" alt="https://www.flaticon.com/authors/lucy-g">
                                 </div>helios.adikara@gmail.com
                             </li>
                         </ul>

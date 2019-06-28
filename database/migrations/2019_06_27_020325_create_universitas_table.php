@@ -25,6 +25,7 @@ class CreateUniversitasTable extends Migration
             $table->string('fax_universitas')->nullable();
             $table->string('email_universitas')->nullable();
             $table->string('website_universitas')->nullable();
+            $table->string('logo')->nullable();
             $table->timestamps();
         });
     }

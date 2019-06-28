@@ -1,0 +1,67 @@
+ .row-search {
+     margin-top: 20px;
+ }
+
+ .form-search {
+     font-size: 20px;
+     padding: 30px !important;
+     border-radius: 15px 0px 0px 15px;
+     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+
+ .searchButton {
+     background-image: linear-gradient(to left, #ee390f 0%, #f9b700 51%, #ee390f 100%);
+     text-align: center;
+     color: #fff;
+     cursor: pointer;
+     font-size: 20px;
+     display: inline-block;
+     border-radius: 0px 15px 15px 0px !important;
+     -o-transition: all .4s ease-in-out;
+     -webkit-transition: all .4s ease-in-out;
+     transition: all .4s ease-in-out;
+     text-transform: capitalize;
+     background-size: 200% auto;
+     border: 1px solid transparent;
+     box-shadow: 0px 12px 20px 0px rgba(255, 126, 95, 0.15);
+     padding: 15px;
+ }
+
+ @media (max-width: 576px) {
+
+     /* line 24, E:/172 Etrain Education/172_Etrain_Education_html/sass/_button.scss */
+     .searchButton {
+         padding: 10px 30px;
+     }
+ }
+
+ @media only screen and (min-width: 576px) and (max-width: 767px) {
+
+     /* line 24, E:/172 Etrain Education/172_Etrain_Education_html/sass/_button.scss */
+     .searchButton {
+         padding: 10px 30px;
+     }
+ }
+
+ @media only screen and (min-width: 768px) and (max-width: 991px) {
+
+     /* line 24, E:/172 Etrain Education/172_Etrain_Education_html/sass/_button.scss */
+     .searchButton {
+         padding: 10px 30px;
+     }
+ }
+
+ .searchButton:hover {
+     color: #fff !important;
+     background-position: right center;
+     box-shadow: 0px 10px 30px 0px rgba(193, 34, 10, 0.2);
+ }
+
+ /*Resize the wrap to see the search bar change!*/
+ .wrap {
+     width: 30%;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+     transform: translate(-50%, -50%);
+ }
