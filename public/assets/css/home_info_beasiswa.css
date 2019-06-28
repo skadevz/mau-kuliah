@@ -1,0 +1,72 @@
+.title__infobeasiswa {
+    position: relative;
+    border-bottom: 1px solid #9b9b9b;
+    margin-bottom: 25px;
+}
+
+.title__content {
+    position: relative;
+    display: inline-block;
+    font-size: 35px;
+    color: #0c2e60;
+    font-weight: 700;
+    padding: 10px 0;
+    margin: 0px !important;
+}
+
+.title__content:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    border-bottom: 7px solid #F26F08;
+}
+
+.clearfix:after,
+.clearfix:before {
+    display: table;
+    content: "";
+    line-height: 0;
+}
+
+.info_beasiswa_area {
+    padding: 0px 0px 50px 0px;
+}
+
+.img-highlight {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 150px;
+    position: relative;
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    transition: filter 0.5s ease;
+}
+
+.text-slide {
+    background: #fff;
+    margin: 0 15px;
+    margin-top: -70px;
+    font-family: 'Noto Sans', sans-serif;
+    padding: 15px;
+    font-size: 14px;
+    color: #000;
+    height: 226px;
+    overflow: hidden;
+    position: relative;
+    z-index: 2;
+    -webkit-transition: all 0.5s ease;
+    transition: all 0.5s ease;
+}
+
+.text-slide h4 {
+    font-family: 'Noto Sans', sans-serif;
+    margin-bottom: 8px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: normal;
+    color: #4B4B4B;
+}

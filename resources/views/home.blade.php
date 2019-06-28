@@ -32,8 +32,8 @@
     </div>
 </section>
 
-<!--================Feature Area =================-->
-<section class="feature_area gray_bg">
+<!--================ Kampus Terdekat =================-->
+<section class="feature_area">
     <div class="container">
         <div class="section_tittle text-center">
             <h2>Kampus Dekat dengan Anda</h2>
@@ -43,12 +43,12 @@
             <div class="col-lg-4 col-sm-6">
                 <div class="feature_item">
                     <div class="row">
-                        <div class="col-lg-4 col-md-3">
+                        <div class="col-lg-4 col-md-3 text-center">
                             <div class="f_icon">
                                 <img src="{{ asset('assets/img/kampus/'.$item->logo) }}" alt="">
                             </div>
                         </div>
-                        <div class="col-lg-8 col-md-9">
+                        <div class="col-lg-8 col-md-9 content-kampus-terdekat">
                             <h4>{{$item->nama_universitas}}</h4>
                             <p>
                                 <i class="fa fa-map-marker" aria-hidden="true"></i>
@@ -60,12 +60,75 @@
                         </div>
                     </div>
                     <br />
-                    <a href="#" class="btn_1">Lihat Review Kampus</a>
+                    <center><a href="#" class="btn_1">Lihat Review Kampus</a></center>
                 </div>
             </div>
             @endforeach
         </div>
     </div>
 </section>
-<!--================End Feature Area =================-->
+<!--================ End Kampus Terdekat =================-->
+
+
+<!--================ Info Beasiswa =================-->
+<section class="info_beasiswa_area">
+    <div class="container">
+        <div class="title__infobeasiswa clearfix">
+            <h2 class="title__content">Info Beasiswa</h2>
+        </div>
+        <div class="row">
+            @foreach ($data_universitas as $item)
+            <div class="col-lg-3 col-sm-6">
+                <a href="">
+                    <div class="img-highlight" style="background-image:url({{ asset('assets/img/beasiswa/single_blog_1.png') }})"></div>
+                    
+                    <div class="text-slide">
+                        <h4>{{$item->nama_universitas}}</h4>
+                        <p>{{$item->alamat_universitas}} Mereka tidak mau sekadar mengeluh atau meluapkan amarah ketika menemui masalah di lingkungan sekitar. Memanfaatkan teknologi</p>
+                    </div>
+                </a>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+<!--================End Info Beasiswa =================-->
+
+
+<!--================ Berita Kampus =================-->
+<section class="berita_kampus_area">
+    <div class="container">
+        <div class="title__infobeasiswa clearfix">
+            <h2 class="title__content">Berita Kampus</h2>
+        </div>
+        <div class="row">
+            @foreach ($data_universitas as $item)
+            <div class="col-lg-3 col-sm-6">
+                <div class="single-blog-post service">
+                    <div class="top-text">
+                        <time class="icon">
+                            <em>Wednesday</em>
+                            <strong>September</strong>
+                            <span>30</span>
+                        </time>
+                    </div>
+                    <div class="img-highlight" style="background-image:url({{ asset('assets/img/beasiswa/single_blog_1.png') }})"></div>
+                    <div class="text">
+                        <h4>iOS Application Development with Swift</h4>
+                        <p>
+                            Lorem ipsum dolor sit amet consec tetur adipisicing elit,
+                            sed do.
+                        </p>
+                        <a href="#" class="primary-btn">
+                            Baca Selengkapnya
+                            <i class="fa fa-long-arrow-right"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            @endforeach
+        </div>
+    </div>
+</section>
+<!--================End Berita Kampus =================-->
 @endsection
