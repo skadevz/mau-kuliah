@@ -22,6 +22,7 @@
         <link rel="stylesheet" href="{{ asset('assets/css/home_berita_kampus.css') }}" />
         <link rel="stylesheet" href="{{ asset('assets/css/time_icon.css') }}" />
         <link rel="stylesheet" href="{{ asset('assets/css/box_search.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/plugins/sweetalert/sweetalert.css') }}" />
     </head>
 
     <body>
@@ -46,4 +47,6 @@
     <script src="{{ asset('assets/plugins/scrollmagic/ScrollMagic.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/greensock/animation.gsap.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/greensock/ScrollToPlugin.min.js') }}"></script>
+    <script src="{{ asset('assets/plugins/sweetalert/sweetalert.min.js') }}"></script>
+    @include('sweet::alert')
 </html>
