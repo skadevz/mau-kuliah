@@ -16,6 +16,12 @@
         <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}" />
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
         <link rel="stylesheet" href="{{ asset('assets/css/button.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/home_button_search.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/home_kampus_terdekat.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/home_info_beasiswa.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/home_berita_kampus.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/time_icon.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/box_search.css') }}" />
     </head>
 
     <body>
