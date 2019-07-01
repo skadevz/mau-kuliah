@@ -46,8 +46,8 @@ class LoginController extends Controller
 
     public function post_login(Request $request)
     {
-        $username = $request->username;
-        $password = $request->password;
+        $username = $request->input('username');
+        $password = $request->input('password');
 
         if (Auth::attempt(['username' => $username, 'password' => $password], true)) {
             return redirect()->intended(route('home'));
