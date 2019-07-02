@@ -10,7 +10,7 @@
             <h2>Daftar Universitas</h2>
         </div>
         <div class="col-sm text-right">
-            <a href="#" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Tambah Universitas"><i class="fa fa-plus"></i></a>
+            <a href="{{ route('universitas.create') }}" class="btn btn-primary" data-toggle="tooltip" data-placement="top" title="Tambah Universitas"><i class="fa fa-plus"></i></a>
         </div>
     </div>
     <div class="row">
@@ -28,18 +28,18 @@
                 </tr>
             </thead>
             <tbody>
-                @for ($i=0; $i < 10; $i++)
+                @foreach ($m_universitas as $item)
                     <tr>
-                        <td>{{ $i+1 }}</td>
-                        <td>Universitas A</td>
-                        <td>alamat lams sda</td>
-                        <td>dolor</td>
+                        <td>{{ $no++ }}</td>
+                        <td>{{ $item->nama_universitas }}</td>
+                        <td>{{ $item->alamat_universitas }}</td>
+                        <td><img src="{{ asset('assets/img/kampus') . '/' . $item->logo }}" height="32"></td>
                         <td>
-                            <a class="btn btn-success" href="#"><i class="fa fa-pencil"></i></a>
-                            <a class="btn btn-danger" href="#"><i class="fa fa-trash"></i></a>
+                            <a class="btn btn-success" href="{{ route('universitas.edit', ['id' => $item->id_universitas]) }}"><i class="fa fa-pencil"></i></a>
+                            <a class="btn btn-danger" href="{{ route('universitas.delete', ['id' => $item->id_universitas]) }}"><i class="fa fa-trash"></i></a>
                         </td>
                     </tr>
-                @endfor
+                @endforeach
             </tbody>
         </table>
     </div>
