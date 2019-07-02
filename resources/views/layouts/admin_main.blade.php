@@ -85,12 +85,6 @@
     <script src="{{ asset('assets/js/jquery-1.12.1.min.js') }}"></script>
     <script src="{{ asset('assets/js/popper.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-
-    <!-- Icons -->
-    <script src="https://unpkg.com/feather-icons/dist/feather.min.js"></script>
-    <script>
-        feather.replace()
-    </script>
     <script src="{{ asset('assets/plugins/sweetalert/sweetalert.min.js') }}"></script>
     @include('sweet::alert')
 
