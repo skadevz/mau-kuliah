@@ -8,6 +8,8 @@
     <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
     <link rel="stylesheet" href="{{ asset('assets/css/admin/dashboard.css')}}" />
     <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.min.css') }}" />
+    <link rel="stylesheet" href="{{ asset('assets/plugins/sweetalert/sweetalert.css') }}" />
+    @yield('css_script')
 </head>
 
 <body>
@@ -45,25 +47,25 @@
                     <ul class="nav flex-column">
                         <li class="nav-item">
                             <a class="nav-link @if ($active_dashboard) active @endif" href="{{ route('admin.dashboard') }}">
-                                <span data-feather="home"></span>
+                                <span class="fa fa-dashboard mr-1"></span>
                                 Dashboard <span class="sr-only">(current)</span>
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link @if ($active_universitas) active @endif" href="{{ route('universitas.index') }}">
-                                <span data-feather="wind"></span>
+                                <span class="fa fa-bank mr-1"></span>
                                 Universitas
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">
-                                <span data-feather="command"></span>
+                                <span class="fa fa-asterisk mr-1"></span>
                                 Jurusan
                             </a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#">
-                                <span data-feather="chevrons-up"></span>
+                                <span class="fa fa-angle-double-up mr-1"></span>
                                 Jenjang
                             </a>
                         </li>
@@ -75,7 +77,6 @@
                 <div class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pb-2 mb-3">
                     <h1 class="h1">@yield('page_name')</h1>
                 </div>
-
                 @yield('content')
             </main>
         </div>
@@ -90,7 +91,9 @@
     <script>
         feather.replace()
     </script>
+    <script src="{{ asset('assets/plugins/sweetalert/sweetalert.min.js') }}"></script>
+    @include('sweet::alert')
 
-    @yield('script')
+    @yield('js_script')
 </body>
 </html>
