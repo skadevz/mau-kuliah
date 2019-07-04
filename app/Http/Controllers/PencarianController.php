@@ -65,8 +65,6 @@ class PencarianController extends Controller
                         ->groupBy('logo')->get();
         $data['m_jurusan'] = $data['m_jurusan']->orderBy($universitas_tbl_name . '.akreditasi_universitas')->get();
 
-        dd($data['m_universitas']);
-
         return view('pencarian.index', $data);
     }
 }
