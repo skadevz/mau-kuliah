@@ -17,14 +17,21 @@
     top: -2px;
 }
 
-.feature_item .f_icon {
-    min-height: 91px;
+.f_icon {
+    min-height: 75px;
 }
 
 @media (max-width: 767px) {
     /* line 10, E:/170 Kanox Agency/170_Kanox_Agency_html/sass/_review.scss */
-    .feature_item .f_icon img {
+    .f_icon img {
         max-height: 150px;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    /* line 33, E:/172 Etrain Education/172_Etrain_Education_html/sass/_common.scss */
+    .f_icon img {
+        max-height: 90px;
     }
 }
 
@@ -43,7 +50,7 @@
     max-width: 290px;
 }
 
-.feature_item .akreditasi {
+.akreditasi {
     font-size: 20px;
     line-height: 20px;
     font-family: "Roboto", sans-serif;
@@ -59,13 +66,20 @@
     box-shadow: 0 10px 50px -10px rgba(0, 0, 0, 0.4);
 }
 
-.content-kampus-terdekat {
+.content-kampus {
     text-align: left;
 }
 
 @media (max-width: 767px) {
     /* line 10, E:/170 Kanox Agency/170_Kanox_Agency_html/sass/_review.scss */
-    .content-kampus-terdekat {
+    .content-kampus {
+        text-align: center;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    /* line 33, E:/172 Etrain Education/172_Etrain_Education_html/sass/_common.scss */
+    .content-kampus {
         text-align: center;
     }
 }

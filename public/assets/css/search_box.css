@@ -1,3 +1,57 @@
+label {
+    color: #4B4B4B;
+    font-size: 16px;
+}
+
+.custom-checkbox {
+    float: right;
+}
+
+@media (max-width: 576px) {
+    /* line 33, E:/172 Etrain Education/172_Etrain_Education_html/sass/_common.scss */
+    .tombol-checkbox {
+        float: left;
+        position: relative;
+        left: 50%;
+    }
+
+    .fixer-container {
+        float: left;
+        position: relative;
+        left: -50%;
+    }
+}
+
+@media only screen and (min-width: 576px) and (max-width: 767px) {
+    /* line 33, E:/172 Etrain Education/172_Etrain_Education_html/sass/_common.scss */
+    .custom-checkbox {
+        float: right;
+    }
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+    /* line 33, E:/172 Etrain Education/172_Etrain_Education_html/sass/_common.scss */
+    .custom-checkbox {
+        float: right;
+    }
+}
+
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    /* line 33, E:/172 Etrain Education/172_Etrain_Education_html/sass/_common.scss */
+    .custom-checkbox {
+        float: right;
+    }
+}
+
+.optionGroup {
+    font-weight: bold;
+    font-style: italic;
+}
+
+.optionChild {
+    padding-left: 15px;
+}
+
 .infobox-container {
     position: relative;
     display: inline-block;
@@ -11,7 +65,7 @@
     padding: 10px 5px 5px 5px;
     margin: 10px;
     position: relative;
-    z-index: 90;
+    z-index: 2;
     -webkit-border-radius: 2px;
     -moz-border-radius: 2px;
     border-radius: 2px;
@@ -32,7 +86,7 @@
     padding: 10px 5px;
     margin: 0;
     left: -15px;
-    z-index: 100;
+    z-index: 3;
     -webkit-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.55);
     -moz-box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.55);
     box-shadow: 0px 0px 3px rgba(0, 0, 0, 0.55);
@@ -130,4 +184,19 @@
 .infobox a:focus {
     text-decoration: none;
     border-bottom: 1px dotted #35b0ff;
+}
+
+.nama-universitas {
+    font-family: "Roboto", sans-serif;
+    font-weight: bold;
+    font-size: 24px;
+    color: #0b1033;
+}
+
+.alamat-universitas {
+    color: #7C8D93;
+}
+
+.infobox hr {
+    margin: 2px;
 }

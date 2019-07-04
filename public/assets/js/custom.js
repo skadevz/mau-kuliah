@@ -1,154 +1,6 @@
 (function ($) {
     "use strict";
 
-    $(document).ready(function () {
-        var sync1 = $("#sync1");
-        var sync2 = $("#sync2");
-        var slidesPerPage = 3; //globaly define number of elements per page
-        var syncedSecondary = true;
-
-        sync1.owlCarousel({
-            items: 1,
-            slideSpeed: 2000,
-            autoplay: true,
-            dots: true,
-            responsiveRefreshRate: 200,
-            navText: true,
-
-        }).on('changed.owl.carousel', syncPosition);
-
-        sync2
-                .on('initialized.owl.carousel', function () {
-                    sync2.find(".owl-item").eq(0).addClass("current");
-                })
-                .owlCarousel({
-                    items: slidesPerPage,
-                    dots: false,
-                    smartSpeed: 200,
-                    slideSpeed: 500,
-                    margin: 0,
-                    autoplay: true,
-                    slideBy: 1, //alternatively you can slide by 1, this way the active slide will stick to the first item in the second carousel
-                    responsiveRefreshRate: 100,
-                    nav: true,
-                    navText: ["<span class='flaticon-slim-left'></span>", "<span class='flaticon-slim-right'></span>"],
-
-                }).on('changed.owl.carousel', syncPosition2);
-
-        function syncPosition(el) {
-            //if you set loop to false, you have to restore this next line
-            var current = el.item.index;
-
-            //if you disable loop you have to comment this block
-            // var count = el.item.count - 1;
-            // var current = Math.round(el.item.index - (el.item.count / 2) - .5);
-
-            // if (current < 0) {
-            //     current = count;
-            // }
-            // if (current > count) {
-            //     current = 0;
-            // }
-
-            //end block
-
-            sync2
-                    .find(".owl-item")
-                    .removeClass("current")
-                    .eq(current)
-                    .addClass("current");
-            var onscreen = sync2.find('.owl-item.active').length - 1;
-            var start = sync2.find('.owl-item.active').first().index();
-            var end = sync2.find('.owl-item.active').last().index();
-
-            if (current > end) {
-                sync2.data('owl.carousel').to(current, 100, true);
-            }
-            if (current < start) {
-                sync2.data('owl.carousel').to(current - onscreen, 100, true);
-            }
-        }
-
-        function syncPosition2(el) {
-            if (syncedSecondary) {
-                var number = el.item.index;
-                sync1.data('owl.carousel').to(number, 100, true);
-            }
-        }
-
-        sync2.on("click", ".owl-item", function (e) {
-            e.preventDefault();
-            var number = $(this).index();
-            sync1.data('owl.carousel').to(number, 300, true);
-        });
-    });
-
-    var review = $('.player_info_item');
-    if (review.length) {
-        review.owlCarousel({
-            items: 1,
-            loop: true,
-            dots: false,
-            autoplay: true,
-            margin: 40,
-            autoplayHoverPause: true,
-            autoplayTimeout: 5000,
-            nav: true,
-            navText: [
-                '<img src="../img/icon/left.svg" alt="">',
-                '<img src="../img/icon/right.svg" alt="">'
-
-            ],
-            responsive: {
-                0: {
-                    margin: 15,
-                },
-                600: {
-                    margin: 10,
-                },
-                1000: {
-                    margin: 10,
-                }
-            }
-        });
-    }
-    $('.popup-youtube, .popup-vimeo').magnificPopup({
-        // disableOn: 700,
-        type: 'iframe',
-        mainClass: 'mfp-fade',
-        removalDelay: 160,
-        preloader: false,
-        fixedContentPos: false
-    });
-
-
-
-    var review = $('.textimonial_iner');
-    if (review.length) {
-        review.owlCarousel({
-            items: 1,
-            loop: true,
-            dots: true,
-            autoplay: true,
-            autoplayHoverPause: true,
-            autoplayTimeout: 5000,
-            nav: false,
-            responsive: {
-                0: {
-                    margin: 15,
-                },
-                600: {
-                    margin: 10,
-                },
-                1000: {
-                    margin: 10,
-                }
-            }
-        });
-    }
-    $(document).ready(function () {
-        $('select').niceSelect();
-    });
     // menu fixed js code
     $(window).scroll(function () {
         var window_top = $(window).scrollTop() + 1;
@@ -159,127 +11,200 @@
         }
     });
 
-    $('.counter').counterUp({
-        time: 2000
-    });
-
-//    $('.slider').slick({
-//        slidesToShow: 1,
-//        slidesToScroll: 1,
-//        arrows: false,
-//        speed: 300,
-//        infinite: true,
-//        asNavFor: '.slider-nav-thumbnails',
-//        autoplay: true,
-//        pauseOnFocus: true,
-//        dots: true,
-//    });
-//
-//    $('.slider-nav-thumbnails').slick({
-//        slidesToShow: 3,
-//        slidesToScroll: 1,
-//        asNavFor: '.slider',
-//        focusOnSelect: true,
-//        infinite: true,
-//        prevArrow: false,
-//        nextArrow: false,
-//        centerMode: true,
-//        responsive: [
-//            {
-//                breakpoint: 480,
-//                settings: {
-//                    centerMode: false,
-//                }
-//            }
-//        ]
-//    });
-    if (document.getElementById('default-select')) {
-        $('select').niceSelect();
-    }
-    //remove active class from all thumbnail slides
-    $('.slider-nav-thumbnails .slick-slide').removeClass('slick-active');
-
-    //set active class to first thumbnail slides
-    $('.slider-nav-thumbnails .slick-slide').eq(0).addClass('slick-active');
-
-    // On before slide change match active thumbnail to current slide
-    $('.slider').on('beforeChange', function (event, slick, currentSlide, nextSlide) {
-        var mySlideNumber = nextSlide;
-        $('.slider-nav-thumbnails .slick-slide').removeClass('slick-active');
-        $('.slider-nav-thumbnails .slick-slide').eq(mySlideNumber).addClass('slick-active');
-    });
-
-    //UPDATED 
-    $('.slider').on('afterChange', function (event, slick, currentSlide) {
-        $('.content').hide();
-        $('.content[data-id=' + (currentSlide + 1) + ']').show();
-    });
-
-
-    $('.gallery_img').magnificPopup({
-        type: 'image',
-        gallery: {
-            enabled: true
-        }
-    });
-
-    if ($('.slider_prlx').length)
-    {
-        var homeBcg = $('.slider_prlx');
-
-        var homeBcgScene = new ScrollMagic.Scene({
-            triggerElement: homeBcg,
-            triggerHook: 1,
-            duration: "100%"
-        })
-                .setTween(TweenMax.to(homeBcg, 1, {y: '15%', ease: Power0.easeNone}))
-                .addTo(ctrl);
-    }
-
 }(jQuery));
 
+$(document).ready(function() {
+    getCompare();
+    setCheckBox();
+    setUniversitasBanding();
+    getBandingTotalUniv();
+    removeUniversitasBanding();
 
-$(document).ready(function ()
-{
-    "use strict";
+    $('#select-lokasi-kampus').select2({
+        placeholder: "Lokasi Kampus",
+        width: 'resolve'
+    });
+    $('#select-tipe-kampus').select2({
+        placeholder: "Tipe Kampus",
+        width: 'resolve',
+        theme: "classic"
+    });
+    $('#select-akreditasi-kampus').select2({
+        placeholder: "Akreditasi Kampus",
+        width: 'resolve',
+        theme: "classic"
+    });
 
-    var ctrl = new ScrollMagic.Controller();
-    initParallax();
-    function initParallax()
-    {
-        // Add parallax effect to home slider
-        if ($('.slider_prlx').length)
-        {
-            var homeBcg = $('.slider_prlx');
+    // Grab whatever we need to paginate
+    var pageParts = $(".paginate");
 
-            var homeBcgScene = new ScrollMagic.Scene({
-                triggerElement: homeBcg,
-                triggerHook: 1,
-                duration: "100%"
-            })
-                    .setTween(TweenMax.to(homeBcg, 1, {y: '15%', ease: Power0.easeNone}))
-                    .addTo(ctrl);
+    // How many parts do we have?
+    var numPages = pageParts.length;
+    // How many parts do we want per page?
+    var perPage = 5;
+
+    // When the document loads we're on page 1
+    // So to start with... hide everything else
+    pageParts.slice(perPage).hide();
+    // Apply simplePagination to our placeholder
+    $("#page-nav").pagination({
+        items: numPages,
+        itemsOnPage: perPage,
+        cssStyle: "light-theme",
+        // We implement the actual pagination
+        //   in this next function. It runs on
+        //   the event that a user changes page
+        onPageClick: function (pageNum) {
+            // Which page parts do we show?
+            var start = perPage * (pageNum - 1);
+            var end = start + perPage;
+
+            // First hide all page parts
+            // Then show those just for our page
+            pageParts.hide()
+            .slice(start, end).show();
         }
-
-        // Add parallax effect to every element with class prlx
-        // Add class prlx_parent to the parent of the element
-        if ($('.prlx_parent').length && $('.prlx').length)
-        {
-            var elements = $('.prlx_parent');
-
-            elements.each(function ()
-            {
-                var ele = this;
-                var bcg = $(ele).find('.prlx');
-
-                var slideParallaxScene = new ScrollMagic.Scene({
-                    triggerElement: ele,
-                    triggerHook: 1,
-                    duration: "200%"
-                })
-                        .setTween(TweenMax.from(bcg, 1, {y: '-30%', ease: Power0.easeNone}))
-                        .addTo(ctrl);
-            });
-        }
-    }
+    });
 });
+
+$('.comparison-close-btn').click(function(e) {
+    $('#comparison').addClass("close");
+});
+
+$('.compare-hidden-toggle').click(function(e) {
+    $('#comparison').removeClass("close");
+});
+
+function getCompare(){
+    $('body').on('change', '.box-compare', function() {
+        var nilai_flag = 0;
+        var val_flag = $("#flag_compare").val();
+
+        var cookie_compare = $.cookie('compare_univ_id');
+        var cookie_compare_name = $.cookie('compare_univ_name');
+        var cookie_compare_img = $.cookie('compare_univ_img');
+
+        var data_id = parseInt($(this).val());
+        var data_name = $(this).closest('.univ-list').find('h4.nama-universitas', this).text().trim();
+        var data_img = $(this).closest('.univ-list').find('.univ-list-logo > img').attr('src');
+
+        if ($(this).is(':checked')) {
+            nilai_flag = parseInt(val_flag)+1;
+            if(nilai_flag > 3) {
+                $(this).removeAttr('checked');
+                Swal.fire({
+                    type: 'error',
+                    text: 'Daftar perbandingan Anda penuh, silahkan hapus salah satu kampus'
+                });
+            }else{
+                $('#flag_compare').val(nilai_flag);
+                $('#comparison').removeClass("close");
+
+                if ($.cookie('compare_univ_id') == undefined) {
+                    $.cookie('compare_univ_id', JSON.stringify([data_id]));
+                    $.cookie('compare_univ_name', JSON.stringify([data_name]));
+                    $.cookie('compare_univ_img', JSON.stringify([data_img]));
+                } else {
+                    var compare_list_id = $.parseJSON(cookie_compare);
+                    var compare_list_name = $.parseJSON(cookie_compare_name);
+                    var compare_list_img = $.parseJSON(cookie_compare_img);
+                    compare_list_id.push(data_id);
+                    compare_list_name.push(data_name);
+                    compare_list_img.push(data_img);
+
+                    $.cookie('compare_univ_id', JSON.stringify(compare_list_id));
+                    $.cookie('compare_univ_name', JSON.stringify(compare_list_name));
+                    $.cookie('compare_univ_img', JSON.stringify(compare_list_img));
+                }
+                $.cookie('total_univ', nilai_flag);
+                setElementCompare(data_id, data_name, data_img);
+            }
+
+        } else {
+            removeElementCompare(data_id, data_name, data_img);
+            nilai_flag = parseInt(val_flag)-1;
+            $('#flag_compare').val(nilai_flag);
+            if(nilai_flag == 0){
+                $('#comparison').addClass("close");
+            }
+            $.cookie('total_univ', nilai_flag);
+        }
+    });
+}
+
+function removeUniversitasBanding() {
+    $('body').on('click', '.remove-compare', function() {
+        var data_id = $(this).data('id');
+        var data_name = $(this).parent().find('.product-title').text();
+        var data_img = $(this).parent().find('.div-image > img').attr('src');
+
+        removeElementCompare(data_id, data_name, data_img);
+    });
+}
+
+function removeElementCompare(data_id, data_name, data_img) {
+    var compare_list_id = $.parseJSON($.cookie('compare_univ_id'));
+    var compare_list_name = $.parseJSON($.cookie('compare_univ_name'));
+    var compare_list_img = $.parseJSON($.cookie('compare_univ_img'));
+    var removeItemId = data_id;
+    var removeItemName = data_name;
+    var removeItemImg = data_img;
+
+    compare_list_id = jQuery.grep(compare_list_id, function(value) {
+        return value != removeItemId;
+    });
+
+    compare_list_name = jQuery.grep(compare_list_name, function(value) {
+        return value != removeItemName;
+    });
+
+    compare_list_img = jQuery.grep(compare_list_img, function(value) {
+        return value != removeItemImg;
+    });
+
+    $.cookie('compare_univ_id', JSON.stringify(compare_list_id));
+    $.cookie('compare_univ_name', JSON.stringify(compare_list_name));
+    $.cookie('compare_univ_img', JSON.stringify(compare_list_img));
+
+    $(':input.box-compare[value=' + data_id + ']').prop('checked', false);
+    $('.item-' + data_id).remove();
+
+    var total_univ = parseInt($.cookie('total_univ')) - 1;
+    $.cookie('total_univ', total_univ);
+    $('#flag_compare').val(total_univ);
+    if(total_univ == 0){
+        $('#comparison').addClass("close");
+    }
+}
+
+function setElementCompare(data_id, data_name, data_img) {
+    $('<li class="item item-'+ data_id +'" data-id="'+ data_id +'"><div class="compare-product-info'+ data_id +' comparelist-flytab"><span class="close remove-compare" data-id="'+ data_id +'"></span><div class="div-image"><img class="product-image" src="'+ data_img +'"></div><h4 class="product-title" data-name="'+ data_name +'">'+ data_name +'</h4></li>').appendTo('.comparison-ul');
+}
+
+function setCheckBox() {
+    if ($.cookie('compare_univ_id') == undefined) return;
+
+    var compare_list = $.parseJSON($.cookie('compare_univ_id'));
+
+    $.each(compare_list, function(key, val) {
+        $(':input.box-compare[value=' + val + ']').prop('checked', true);
+    });
+}
+
+function setUniversitasBanding() {
+    if ($.cookie('compare_univ_id') == undefined) return;
+
+    var compare_list_id = $.parseJSON($.cookie('compare_univ_id'));
+    var compare_list_name = $.parseJSON($.cookie('compare_univ_name'));
+    var compare_list_img = $.parseJSON($.cookie('compare_univ_img'));
+
+    $.each(compare_list_img, function(key, val) {
+        $('<li class="item item-'+compare_list_id[key]+'" data-id="' + compare_list_id[key] + '"><div class="compare-product-info' + compare_list_id[key] + ' comparelist-flytab"><span class="close remove-compare" data-id="' + compare_list_id[key] + '"></span><div class="div-image"><img class="product-image" src="'+ val +'"></div><h4 class="product-title" data-name="' + compare_list_name[key] + '">'+compare_list_name[key]+'</h4></li>').appendTo('.comparison-ul');
+    });
+}
+
+function getBandingTotalUniv () {
+    if ($.cookie('total_univ') == undefined) return;
+    $('#flag_compare').val($.cookie('total_univ'));
+    $('#comparison').removeClass("close");
+}
