@@ -78,7 +78,7 @@
                         <div class="infobox">
                             <h3><span>Bandingkan Kampus</span></h3>
                             <p class="mt-4">
-                                @foreach ($data_universitas as $item)
+                                @foreach ($m_universitas as $item)
                                     <div class="card shadow paginate univ-list">
                                         <div class="card-body">
                                             <div class="row">
