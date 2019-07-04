@@ -15,7 +15,13 @@ class CreateKomentarTable extends Migration
     {
         Schema::create('tbl_komentar', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedInteger('id_universitas');
+            $table->string('nama');
+            $table->text('komentar');
+            $table->integer('rating');
             $table->timestamps();
+
+            $table->foreign('id_universitas')->references('id_universitas')->on('m_universitas')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

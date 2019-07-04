@@ -15,9 +15,9 @@ class CreateJurusanTable extends Migration
     {
         Schema::create('m_jurusan', function (Blueprint $table) {
             $table->bigIncrements('id_jurusan');
-            $table->integer('id_universitas');
+            // $table->integer('id_universitas');
             $table->string('nama_jurusan',100);
-            $table->char('akreditasi_jurusan',1);
+            $table->text('tag');
             $table->timestamps();
         });
     }

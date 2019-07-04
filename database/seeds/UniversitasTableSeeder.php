@@ -43,7 +43,47 @@ class UniversitasTableSeeder extends Seeder
         ]);
 
         Universitas::create([
-            'nama_universitas' => 'Universitas Telkom',
+            'nama_universitas' => 'Universitas Indonesia',
+            'akreditasi_universitas' => 'A',
+            'alamat_universitas' => 'Jl. Ganesha 10, Jawa Barat 40132',
+            'id_kecamatan' => '1101010',
+            'id_kota' => '1101',
+            'id_provinsi' => '11',
+            'logo' => 'its.png'
+        ]);
+
+        Universitas::create([
+            'nama_universitas' => 'Universitas Airlangga',
+            'akreditasi_universitas' => 'A',
+            'alamat_universitas' => 'Jl. Ganesha 10, Jawa Barat 40132',
+            'id_kecamatan' => '1101010',
+            'id_kota' => '1101',
+            'id_provinsi' => '11',
+            'logo' => 'tu.png'
+        ]);
+
+        Universitas::create([
+            'nama_universitas' => 'Universitas Negeri Medan',
+            'akreditasi_universitas' => 'A',
+            'alamat_universitas' => 'Jl. Ganesha 10, Jawa Barat 40132',
+            'id_kecamatan' => '1101010',
+            'id_kota' => '1101',
+            'id_provinsi' => '11',
+            'logo' => 'its.png'
+        ]);
+
+        Universitas::create([
+            'nama_universitas' => 'Universitas Negeri Semarang',
+            'akreditasi_universitas' => 'A',
+            'alamat_universitas' => 'Jl. Ganesha 10, Jawa Barat 40132',
+            'id_kecamatan' => '1101010',
+            'id_kota' => '1101',
+            'id_provinsi' => '11',
+            'logo' => 'binus.png'
+        ]);
+
+        Universitas::create([
+            'nama_universitas' => 'Universitas Brawijaya',
             'akreditasi_universitas' => 'A',
             'alamat_universitas' => 'Jl. Ganesha 10, Jawa Barat 40132',
             'id_kecamatan' => '1101010',

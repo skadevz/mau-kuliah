@@ -25,7 +25,11 @@ class CreateUniversitasTable extends Migration
             $table->string('fax_universitas')->nullable();
             $table->string('email_universitas')->nullable();
             $table->string('website_universitas')->nullable();
+            $table->string('tanggal_berdiri')->nullable();
+            $table->string('nomor_sk')->nullable();
+            $table->string('tangal_sk')->nullable();
             $table->string('logo')->default('default_kampus.png')->nullable();
+            $table->string('sistem_pembelajaran')->nullable();
             $table->timestamps();
         });
     }

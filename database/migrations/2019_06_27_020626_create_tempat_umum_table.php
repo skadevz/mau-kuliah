@@ -15,7 +15,12 @@ class CreateTempatUmumTable extends Migration
     {
         Schema::create('tbl_tempat_umum', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedInteger('id_universitas');
+            $table->string('nama_tempat_umum');
+            $table->string('icon');
             $table->timestamps();
+
+            $table->foreign('id_universitas')->references('id_universitas')->on('m_universitas')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 

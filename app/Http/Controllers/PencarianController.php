@@ -27,39 +27,45 @@ class PencarianController extends Controller
         $tipe_kampus = $request->input('tipe_kampus');
         $akreditasi_kampus = $request->input('akreditasi_kampus');
 
+        $data['no'] = 1;
         $data['m_lokasi'] = Kota::get();
-        $data['universitas'] = Universitas::select($universitas_tbl_name . '.id_universitas', 'nama_universitas', 'alamat_universitas', 'akreditasi_universitas', 'logo')
+        $data['m_universitas'] = Universitas::select($universitas_tbl_name . '.id_universitas', 'nama_universitas', 'alamat_universitas', 'akreditasi_universitas', 'logo')
                             ->join($universitas_jurusan_tbl_name, $universitas_tbl_name . '.id_universitas', '=', $universitas_jurusan_tbl_name . '.id_universitas')
-                            ->join($jurusan_tbl_name, $universitas_jurusan_tbl_name . '.id_jurusan', '=', $jurusan_tbl_name . '.id_jurusan')
-                            ->where($jurusan_tbl_name . '.tag', 'like', '%' . $value . '%');
+                            ->join($jurusan_tbl_name, $universitas_jurusan_tbl_name . '.id_jurusan', '=', $jurusan_tbl_name . '.id_jurusan');
 
-        $data['jurusan'] = Jurusan::select($universitas_tbl_name . '.id_universitas', $jurusan_tbl_name . '.id_jurusan', 'nama_jurusan', 'nama_universitas', 'logo')
+        $data['m_jurusan'] = Jurusan::select($universitas_tbl_name . '.id_universitas', $jurusan_tbl_name . '.id_jurusan', 'nama_jurusan', 'nama_universitas', 'logo')
                         ->join($universitas_jurusan_tbl_name, $jurusan_tbl_name . '.id_jurusan', '=', $universitas_jurusan_tbl_name . '.id_jurusan')
-                        ->join($universitas_tbl_name, $universitas_jurusan_tbl_name . '.id_universitas', '=', $universitas_tbl_name . '.id_universitas')
-                        ->where($jurusan_tbl_name . '.tag', 'like', '%' . $value . '%');
+                        ->join($universitas_tbl_name, $universitas_jurusan_tbl_name . '.id_universitas', '=', $universitas_tbl_name . '.id_universitas');
+
+        if ($value != null) {
+            $data['m_universitas'] = $data['m_universitas']->where($jurusan_tbl_name . '.tag', 'like', '%' . $value . '%');
+            $data['m_jurusan'] = $data['m_jurusan']->where($jurusan_tbl_name . '.tag', 'like', '%' . $value . '%');
+        }
 
         if ($lokasi_kampus != null) {
-            $data['universitas'] = $data['universitas']->where($universitas_tbl_name . '.id_kota', $lokasi_kampus);
-            $data['jurusan'] = $data['jurusan']->where($universitas_tbl_name . '.id_kota', $lokasi_kampus);
+            $data['m_universitas'] = $data['m_universitas']->where($universitas_tbl_name . '.id_kota', $lokasi_kampus);
+            $data['m_jurusan'] = $data['m_jurusan']->where($universitas_tbl_name . '.id_kota', $lokasi_kampus);
         }
 
         if ($tipe_kampus != null) {
-            $data['universitas'] = $data['universitas']->where($universitas_tbl_name . '.tipe_kampus', $lokasi_kampus);
-            $data['jurusan'] = $data['jurusan']->where($universitas_tbl_name . '.tipe_kampus', $lokasi_kampus);
+            $data['m_universitas'] = $data['m_universitas']->where($universitas_tbl_name . '.tipe_kampus', $lokasi_kampus);
+            $data['m_jurusan'] = $data['m_jurusan']->where($universitas_tbl_name . '.tipe_kampus', $lokasi_kampus);
         }
 
         if ($akreditasi_kampus != null) {
-            $data['universitas'] = $data['universitas']->where($universitas_tbl_name . '.akreditasi_universitas', $lokasi_kampus);
-            $data['jurusan'] = $data['jurusan']->where($universitas_tbl_name . '.akreditasi_universitas', $lokasi_kampus);
+            $data['m_universitas'] = $data['m_universitas']->where($universitas_tbl_name . '.akreditasi_universitas', $lokasi_kampus);
+            $data['m_jurusan'] = $data['m_jurusan']->where($universitas_tbl_name . '.akreditasi_universitas', $lokasi_kampus);
         }
 
-        $data['universitas'] = $data['universitas']->orderBy($universitas_tbl_name . '.akreditasi_universitas')
+        $data['m_universitas'] = $data['m_universitas']->orderBy($universitas_tbl_name . '.akreditasi_universitas')
                         ->groupBy($universitas_tbl_name.'.id_universitas')
                         ->groupBy('nama_universitas')
                         ->groupBy('alamat_universitas')
                         ->groupBy('akreditasi_universitas')
                         ->groupBy('logo')->get();
-        $data['jurusan'] = $data['jurusan']->orderBy($universitas_tbl_name . '.akreditasi_universitas')->get();
+        $data['m_jurusan'] = $data['m_jurusan']->orderBy($universitas_tbl_name . '.akreditasi_universitas')->get();
+
+        dd($data['m_universitas']);
 
         return view('pencarian.index', $data);
     }

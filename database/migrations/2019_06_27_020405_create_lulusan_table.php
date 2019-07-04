@@ -15,6 +15,12 @@ class CreateLulusanTable extends Migration
     {
         Schema::create('tbl_lulusan', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->string('nama');
+            // $table->string('tempat_lahir')->nullable();
+            // $table->date('tanggal_lahir')->nullable();
+            // $table->text('biografi')->nullable();
+            $table->string('url_wikipedia');
+            $table->string('foto')->default('avatar.png');
             $table->timestamps();
         });
     }

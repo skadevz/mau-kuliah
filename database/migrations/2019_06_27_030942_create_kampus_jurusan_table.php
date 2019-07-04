@@ -18,6 +18,7 @@ class CreateKampusJurusanTable extends Migration
             $table->integer('id_universitas');
             $table->integer('id_jurusan');
             $table->integer('id_jenjang');
+            $table->char('akreditasi_jurusan', 1);
             $table->timestamps();
         });
     }

@@ -15,7 +15,12 @@ class CreateFasilitasTable extends Migration
     {
         Schema::create('tbl_fasilitas', function (Blueprint $table) {
             $table->bigIncrements('id');
+            $table->unsignedInteger('id_universitas');
+            $table->string('nama_fasilitas');
+            $table->string('icon');
             $table->timestamps();
+
+            $table->foreign('id_universitas')->references('id_universitas')->on('m_universitas')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
