@@ -10,19 +10,20 @@
         <link rel="stylesheet" href="{{ asset('assets/css/bootstrap.min.css') }}" />
         <link rel="stylesheet" href="{{ asset('assets/css/font-awesome.min.css') }}" />
         <link rel="stylesheet" href="{{ asset('assets/css/animate.css') }}" />
-        <link rel="stylesheet" href="{{ asset('assets/css/owl.carousel.min.css') }}" />
         <link rel="stylesheet" href="{{ asset('assets/css/themify-icons.css') }}" />
-        <link rel="stylesheet" href="{{ asset('assets/css/magnific-popup.css') }}" />
-        <link rel="stylesheet" href="{{ asset('assets/css/slick.css') }}" />
         <link rel="stylesheet" href="{{ asset('assets/css/style.css') }}" />
-        <link rel="stylesheet" href="{{ asset('assets/css/button.css') }}" />
         <link rel="stylesheet" href="{{ asset('assets/css/home_button_search.css') }}" />
         <link rel="stylesheet" href="{{ asset('assets/css/home_kampus_terdekat.css') }}" />
         <link rel="stylesheet" href="{{ asset('assets/css/home_info_beasiswa.css') }}" />
         <link rel="stylesheet" href="{{ asset('assets/css/home_berita_kampus.css') }}" />
         <link rel="stylesheet" href="{{ asset('assets/css/time_icon.css') }}" />
-        <link rel="stylesheet" href="{{ asset('assets/css/box_search.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/search_box.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/search_compare.css') }}" />
         <link rel="stylesheet" href="{{ asset('assets/plugins/sweetalert/sweetalert.css') }}" />
+        {{-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@8/dist/sweetalert2.min.css" id="theme-styles"> --}}
+        <link rel="stylesheet" href="{{ asset('assets/css/simplePagination.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/select2.min.css') }}" />
+        {{-- <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8/dist/sweetalert2.min.js"></script> --}}
     </head>
 
     <body>
@@ -31,22 +32,11 @@
     @include('layouts.footer')
     </body>
     <script src="{{ asset('assets/js/jquery-1.12.1.min.js') }}"></script>
-    <script src="{{ asset('assets/js/popper.min.js') }}"></script>
     <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.magnific-popup.js') }}"></script>
-    <script src="{{ asset('assets/js/swiper.min.js') }}"></script>
-    <script src="{{ asset('assets/js/masonry.pkgd.js') }}"></script>
-    <script src="{{ asset('assets/js/owl.carousel.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.nice-select.min.js') }}"></script>
-    <script src="{{ asset('assets/js/slick.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.counterup.min.js') }}"></script>
-    <script src="{{ asset('assets/js/waypoints.min.js') }}"></script>
-    <script src="{{ asset('assets/js/owl.carousel2.thumbs.min.js') }}"></script>
     <script src="{{ asset('assets/js/custom.js') }}"></script>
-    <script src="{{ asset('assets/plugins/greensock/TweenMax.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/scrollmagic/ScrollMagic.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/greensock/animation.gsap.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/greensock/ScrollToPlugin.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.simplePagination.js') }}"></script>
+    <script src="{{ asset('assets/js/select2.min.js') }}"></script>
     <script src="{{ asset('assets/plugins/sweetalert/sweetalert.min.js') }}"></script>
+    <script src="{{ asset('assets/js/jquery.cookie.js') }}"></script>
     @include('sweet::alert')
 </html>

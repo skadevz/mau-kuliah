@@ -1,0 +1,288 @@
+#comparison {
+    width: 100%;
+    height: 135px;
+    background-color: #EEE;
+    background-color: rgba(239, 239, 239, 0.95);
+    position: fixed;
+    bottom: -135px;
+    bottom: 0 \0\9;
+    right: 0;
+    left: 0;
+    z-index: 7;
+    -webkit-transition: all 600ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    -ms-transition: all 600ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    transition: all 600ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    -webkit-transform: translateY(-135px);
+    -ms-transform: translateY(-135px);
+    transform: translateY(-135px);
+    /* æ¯”è¼ƒæŒ‰éˆ• */
+}
+
+#comparison.close {
+    bottom: -135px \0\9;
+    -webkit-transform: translateY(0);
+    -ms-transform: translateY(0);
+    transform: translateY(0);
+}
+
+#comparison.close .compare-hidden-toggle {
+    top: -30px;
+    height: 30px;
+}
+
+#comparison .close-btn {
+    position: absolute;
+    right: 15px;
+    top: 2px;
+    font-size: 30px;
+    cursor: pointer;
+    color: #555;
+    z-index: 2;
+}
+
+#comparison .comparison-title {
+    font-size: 12px;
+    line-height: 16px;
+    width: 25%;
+    float: left;
+}
+
+#comparison .comparison-title p {
+    width: 290px;
+    font-size: 12px;
+    color: #0C2E60;
+}
+
+#comparison .comparison-title .go-to-compare {
+    position: relative;
+    right: initial;
+    right: inherit;
+    display: none;
+}
+
+#comparison .comparison-wrapper {
+    position: relative;
+    width: 1170px;
+    height: 100%;
+    margin: 0 auto;
+}
+
+#comparison .title {
+    /* font-size: 16px; */
+    margin-top: 25px;
+    margin-bottom: 8px;
+    color: #FF1481;
+    font-weight: bold;
+}
+
+#comparison .comparison-items {
+    position: relative;
+    float: right;
+    padding-top: 10px;
+    width: 73%;
+}
+
+#comparison .comparison-items .hidden-product-info {
+    display: none;
+}
+
+#comparison .comparison-ul {
+    float: left;
+    padding-left: 0;
+    width: 80%;
+    margin: 0;
+}
+
+#comparison .comparison-ul .item {
+    position: relative;
+    list-style: none;
+    float: left;
+    margin: 8px 5px 0 5px;
+    width: 135px;
+    text-align: center;
+}
+
+#comparison .comparison-ul .item .product-title {
+    font-size: 12px;
+    margin-top: 5px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    color: #606060;
+}
+
+#comparison .comparison-ul .item .div-image {
+    padding: 50px auto !important;
+}
+
+#comparison .comparison-ul .item .product-image {
+    height: auto;
+    margin: 0 auto;
+    max-width: 60%;
+}
+
+#comparison .comparison-ul .item .close {
+    right: 0;
+    top: -7px;
+    width: 20px;
+    height: 20px;
+    background: url("../img/icon/compare-close-btn.png") 0 0 no-repeat;
+    position: absolute;
+    display: none;
+    cursor: pointer;
+}
+
+#comparison .comparison-ul .item + .item {
+    margin-left: 35px;
+}
+
+#comparison .comparison-ul .item:hover .close {
+    display: block;
+}
+
+#comparison .go-to-compare {
+    position: absolute;
+    right: -30px;
+    top: 50%;
+    border: 2px solid #00a0e9;
+    padding: 7px 30px;
+    color: #00a0e9;
+    font-size: 12px;
+    text-align: center;
+    margin-top: -16px;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    cursor: pointer;
+}
+
+#comparison .go-to-compare:hover {
+    border: 2px solid #008fd8;
+    color: #008fd8;
+    transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+}
+
+#comparison .compare-hidden-toggle {
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    width: 47px;
+    height: 0;
+    cursor: pointer;
+    transition: all 0.4s cubic-bezier(0.165, 0.84, 0.44, 1);
+    background: url("../img/icon/compare-arrow-1.png")  50% 10px no-repeat #efefef;
+}
+
+:root #comparison {
+    bottom: -135px;
+}
+
+:root #comparison.close {
+    bottom: -135px;
+}
+
+@media all and (max-width: 1200px) {
+    /* ~ 1169 */
+    #comparison {
+        width: 100%;
+        height: 255px;
+        -webkit-transform: translateY(-255px);
+        -ms-transform: translateY(-255px);
+        transform: translateY(-255px);
+        bottom: -255px;
+        bottom: 0 \0\9;
+    }
+    #comparison.close {
+        bottom: -255px\0;
+    }
+    #comparison .comparison-wrapper {
+        width: 97%;
+        padding-top: 5px;
+    }
+    #comparison .comparison-wrapper .product-image {
+        height: auto;
+        margin: 0 auto;
+        max-width: 60%;
+    }
+    #comparison .comparison-title {
+        float: none;
+    }
+    #comparison .comparison-title > .title {
+        margin: 0;
+    }
+    #comparison .comparison-title > .info {
+        display: none;
+    }
+    #comparison .comparison-title p {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+    #comparison .comparison-items {
+        float: none;
+        width: 100%;
+    }
+    #comparison .comparison-ul {
+        float: none;
+        width: 95%;
+        margin: 0 auto;
+    }
+    #comparison .comparison-ul:after {
+        content: "";
+        clear: both;
+        width: 100%;
+        display: block;
+    }
+    #comparison .comparison-ul .item {
+        margin: 0;
+        width: 22.9375%;
+    }
+    #comparison .comparison-ul .item + .item {
+        margin-left: 2.75%;
+    }
+    #comparison > .go-to-compare {
+        position: absolute;
+        top: initial;
+        top: inherit;
+        bottom: 10px;
+        right: 6px;
+    }
+    :root #comparison {
+        bottom: -255px;
+    }
+    :root #comparison.close {
+        bottom: -255px;
+    }
+}
+
+@media only screen and (max-width: 720px) {
+    #comparison {
+        width: 100%;
+        height: 210px;
+        -webkit-transform: translateY(-210px);
+        -ms-transform: translateY(-210px);
+        transform: translateY(-210px);
+        bottom: -210px;
+        bottom: 0\0;
+        z-index: 7;
+    }
+    #comparison.close {
+        bottom: -210px\0;
+    }
+    #comparison .comparison-title {
+        width: 100%;
+    }
+    #comparison .comparison-ul .item .close {
+        display: block;
+        opacity: .5;
+    }
+    :root #comparison {
+        bottom: -210px;
+    }
+    :root #comparison.close {
+        bottom: -210px;
+    }
+}

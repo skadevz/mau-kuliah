@@ -45,10 +45,10 @@
                     <div class="row">
                         <div class="col-lg-4 col-md-3 text-center">
                             <div class="f_icon">
-                                <img src="{{ asset('assets/img/kampus/'.$item->logo) }}" alt="">
+                                <img src="{{ asset('assets/img/kampus/'.$item->logo) }}">
                             </div>
                         </div>
-                        <div class="col-lg-8 col-md-9 content-kampus-terdekat">
+                        <div class="col-lg-8 col-md-9 content-kampus">
                             <h4>{{$item->nama_universitas}}</h4>
                             <p>
                                 <i class="fa fa-map-marker" aria-hidden="true"></i>
@@ -81,7 +81,7 @@
             <div class="col-lg-3 col-sm-6">
                 <a href="">
                     <div class="img-highlight" style="background-image:url({{ asset('assets/img/beasiswa/single_blog_1.png') }})"></div>
-                    
+
                     <div class="text-slide">
                         <h4>{{$item->nama_universitas}}</h4>
                         <p>{{$item->alamat_universitas}} Mereka tidak mau sekadar mengeluh atau meluapkan amarah ketika menemui masalah di lingkungan sekitar. Memanfaatkan teknologi</p>

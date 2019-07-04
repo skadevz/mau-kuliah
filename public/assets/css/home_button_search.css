@@ -31,7 +31,16 @@
 
      /* line 24, E:/172 Etrain Education/172_Etrain_Education_html/sass/_button.scss */
      .searchButton {
-         padding: 10px 30px;
+         padding: 5px;
+         font-size: 14px;
+         height: 35px;
+         border-radius: 0px 10px 10px 0px !important;
+     }
+
+     .form-search {
+         font-size: 14px;
+         padding: 5px !important;
+         border-radius: 10px 0px 0px 10px;
      }
  }
 
