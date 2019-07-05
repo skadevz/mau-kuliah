@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTempatUmumTable extends Migration
+class CreateTblBeasiswaTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,9 @@ class CreateTempatUmumTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_tempat_umum', function (Blueprint $table) {
+        Schema::create('tbl_beasiswa', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('id_universitas');
-            $table->string('nama_tempat_umum');
-            $table->string('icon');
             $table->timestamps();
-
-            $table->foreign('id_universitas')->references('id_universitas')->on('m_universitas')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -31,6 +26,6 @@ class CreateTempatUmumTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_tempat_umum');
+        Schema::dropIfExists('tbl_beasiswa');
     }
 }

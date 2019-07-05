@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateJenjangTable extends Migration
+class CreateMLulusanTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,9 +13,11 @@ class CreateJenjangTable extends Migration
      */
     public function up()
     {
-        Schema::create('m_jenjang', function (Blueprint $table) {
-            $table->bigIncrements('id_jenjang');
-            $table->string('nama_jenjang', 5);
+        Schema::create('m_lulusan', function (Blueprint $table) {
+            $table->bigIncrements('id_lulusan');
+            $table->string('nama');
+            $table->string('url_wikipedia');
+            $table->string('foto')->default('avatar.png');
             $table->timestamps();
         });
     }
@@ -27,6 +29,6 @@ class CreateJenjangTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('m_jenjang');
+        Schema::dropIfExists('m_lulusan');
     }
 }

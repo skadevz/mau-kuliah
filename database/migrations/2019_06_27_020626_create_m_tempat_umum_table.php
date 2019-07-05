@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateJurusanTable extends Migration
+class CreateMTempatUmumTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,10 @@ class CreateJurusanTable extends Migration
      */
     public function up()
     {
-        Schema::create('m_jurusan', function (Blueprint $table) {
-            $table->bigIncrements('id_jurusan');
-            // $table->integer('id_universitas');
-            $table->string('nama_jurusan',100);
-            $table->text('tag');
+        Schema::create('m_tempat_umum', function (Blueprint $table) {
+            $table->bigIncrements('id_tempat_umum');
+            $table->string('nama_tempat_umum');
+            $table->string('icon');
             $table->timestamps();
         });
     }
@@ -29,6 +28,6 @@ class CreateJurusanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('m_jurusan');
+        Schema::dropIfExists('m_tempat_umum');
     }
 }

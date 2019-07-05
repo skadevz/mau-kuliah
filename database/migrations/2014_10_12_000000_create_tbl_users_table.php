@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateFasilitasTable extends Migration
+class CreateTblUsersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateFasilitasTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_fasilitas', function (Blueprint $table) {
+        Schema::create('tbl_users', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedInteger('id_universitas');
-            $table->string('nama_fasilitas');
-            $table->string('icon');
+            $table->string('name');
+            $table->string('username')->unique();
+            $table->string('password');
+            $table->rememberToken();
             $table->timestamps();
-
-            $table->foreign('id_universitas')->references('id_universitas')->on('m_universitas')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -31,6 +30,6 @@ class CreateFasilitasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_fasilitas');
+        Schema::dropIfExists('tbl_users');
     }
 }

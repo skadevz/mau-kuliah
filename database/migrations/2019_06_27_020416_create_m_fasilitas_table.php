@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKampusJurusanTable extends Migration
+class CreateMFasilitasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,10 @@ class CreateKampusJurusanTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_kampus_jurusan', function (Blueprint $table) {
-            $table->bigIncrements('id');
-            $table->integer('id_universitas');
-            $table->integer('id_jurusan');
-            $table->integer('id_jenjang');
-            $table->char('akreditasi_jurusan', 1);
+        Schema::create('m_fasilitas', function (Blueprint $table) {
+            $table->bigIncrements('id_fasilitas');
+            $table->string('nama_fasilitas');
+            $table->string('icon');
             $table->timestamps();
         });
     }
@@ -30,6 +28,6 @@ class CreateKampusJurusanTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_kampus_jurusan');
+        Schema::dropIfExists('m_fasilitas');
     }
 }

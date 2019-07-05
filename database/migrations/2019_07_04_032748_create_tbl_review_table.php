@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateKomentarTable extends Migration
+class CreateTblReviewTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,13 @@ class CreateKomentarTable extends Migration
      */
     public function up()
     {
-        Schema::create('tbl_komentar', function (Blueprint $table) {
+        Schema::create('tbl_review', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedInteger('id_universitas');
             $table->string('nama');
             $table->text('komentar');
             $table->integer('rating');
             $table->timestamps();
-
-            $table->foreign('id_universitas')->references('id_universitas')->on('m_universitas')->onUpdate('cascade')->onDelete('cascade');
         });
     }
 
@@ -32,6 +30,6 @@ class CreateKomentarTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tbl_komentar');
+        Schema::dropIfExists('tbl_review');
     }
 }

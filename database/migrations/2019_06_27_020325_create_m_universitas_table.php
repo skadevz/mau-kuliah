@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateUniversitasTable extends Migration
+class CreateMUniversitasTable extends Migration
 {
     /**
      * Run the migrations.
@@ -16,7 +16,8 @@ class CreateUniversitasTable extends Migration
         Schema::create('m_universitas', function (Blueprint $table) {
             $table->bigIncrements('id_universitas');
             $table->string('nama_universitas');
-            $table->char('akreditasi_universitas',1);
+            $table->string('nama_pendek')->nullable();
+            $table->char('akreditasi_universitas', 1);
             $table->string('alamat_universitas');
             $table->integer('id_kecamatan');
             $table->integer('id_kota');

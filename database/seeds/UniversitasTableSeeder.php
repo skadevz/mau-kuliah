@@ -49,7 +49,7 @@ class UniversitasTableSeeder extends Seeder
             'id_kecamatan' => '1101010',
             'id_kota' => '1101',
             'id_provinsi' => '11',
-            'logo' => 'its.png'
+            'logo' => 'ui.png'
         ]);
 
         Universitas::create([
@@ -59,7 +59,7 @@ class UniversitasTableSeeder extends Seeder
             'id_kecamatan' => '1101010',
             'id_kota' => '1101',
             'id_provinsi' => '11',
-            'logo' => 'tu.png'
+            'logo' => 'unair.png'
         ]);
 
         Universitas::create([
@@ -69,7 +69,7 @@ class UniversitasTableSeeder extends Seeder
             'id_kecamatan' => '1101010',
             'id_kota' => '1101',
             'id_provinsi' => '11',
-            'logo' => 'its.png'
+            'logo' => 'unimed.png'
         ]);
 
         Universitas::create([
@@ -79,7 +79,7 @@ class UniversitasTableSeeder extends Seeder
             'id_kecamatan' => '1101010',
             'id_kota' => '1101',
             'id_provinsi' => '11',
-            'logo' => 'binus.png'
+            'logo' => 'unnes.png'
         ]);
 
         Universitas::create([
@@ -89,7 +89,17 @@ class UniversitasTableSeeder extends Seeder
             'id_kecamatan' => '1101010',
             'id_kota' => '1101',
             'id_provinsi' => '11',
-            'logo' => 'its.png'
+            'logo' => 'unbraw.png'
+        ]);
+
+        Universitas::create([
+            'nama_universitas' => 'Institut Teknologi Bandung',
+            'akreditasi_universitas' => 'A',
+            'alamat_universitas' => 'Kampus ITS Sukolilo, Jawa Timur 60111',
+            'id_kecamatan' => '1101010',
+            'id_kota' => '1101',
+            'id_provinsi' => '11',
+            'logo' => 'itb.png'
         ]);
     }
 }

@@ -15,6 +15,11 @@ class DatabaseSeeder extends Seeder
         $this->call(UniversitasTableSeeder::class);
         $this->call(JurusanTableSeeder::class);
         $this->call(JenjangTableSeeder::class);
-        $this->call(UniversitasJurusanTableSeeder::class);
+        $this->call(FasilitasTableSeeder::class);
+        $this->call(TempatUmumTableSeeder::class);
+
+        $this->call(JenJurUnivTableSeeder::class);
+        $this->call(FasUnivTableSeeder::class);
+        $this->call(TemUUnivTableSeeder::class);
     }
 }
