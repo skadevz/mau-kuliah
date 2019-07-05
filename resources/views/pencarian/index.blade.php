@@ -19,7 +19,9 @@
                                     </div>
                                 </div>
                             </div>
-                            <p>Hasil Pencarian "Programmer"</p>
+                            @if ($value)
+                                <p>Hasil Pencarian "{{ $value }}"</p>
+                            @endif
                         </div>
                     </div>
                 </div>
@@ -34,16 +36,13 @@
                         <div class="form-row">
                             <div class="col-md-3">
                                 <select id="select-lokasi-kampus" name="states[]" multiple="multiple" style="width: 100%">
-                                    <optgroup label="Swedish Cars">
-                                        <option value="AL">Alabama</option>
-                                        <option value="AB">Alabama</option>
-                                    </optgroup>
-                                    <optgroup label="Swedish Cassrs">
-                                        <option value="AC">Alabama</option>
-                                        <option value="AD">Alabama</option>
-                                        <option value="AE">Alabama</option>
-                                        <option value="WY">Wyoming</option>
-                                    </optgroup>
+                                    @foreach ($m_lokasi as $item)
+                                        <optgroup label="{{ $item->nama }}">
+                                            @foreach ($item->kota as $kota)
+                                                <option value="{{ $kota->id_kota }}">{{$kota->nama}}</option>
+                                            @endforeach
+                                        </optgroup>
+                                    @endforeach
                                 </select>
                             </div>
                             <div class="col-md-3">
