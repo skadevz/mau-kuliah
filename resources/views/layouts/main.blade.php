@@ -23,6 +23,7 @@
         <link rel="stylesheet" href="{{ asset('assets/plugins/sweetalert/sweetalert.css') }}" />
         <link rel="stylesheet" href="{{ asset('assets/css/simplePagination.css') }}" />
         <link rel="stylesheet" href="{{ asset('assets/css/select2.min.css') }}" />
+        @yield('css')
     </head>
 
     <body>
@@ -39,4 +40,5 @@
     <script src="{{ asset('assets/js/jquery.cookie.js') }}"></script>
     <script src="{{ asset('assets/js/jquery.redirect.js') }}"></script>
     @include('sweet::alert')
+    @yield('js')
 </html>
