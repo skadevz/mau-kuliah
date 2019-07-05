@@ -55,17 +55,17 @@ $(document).ready(function() {
     $('#select-tipe-kampus').select2({
         placeholder: "Tipe Kampus",
         width: 'resolve',
-        theme: "classic"
+        // theme: "classic"
     });
     $('#select-akreditasi-kampus').select2({
         placeholder: "Akreditasi Kampus",
         width: 'resolve',
-        theme: "classic"
+        // theme: "classic"
     });
     $('#select-sistem-perkuliahan').select2({
         placeholder: "Sistem Perkuliahan",
         width: 'resolve',
-        theme: "classic"
+        // theme: "classic"
     });
 
     // Grab whatever we need to paginate

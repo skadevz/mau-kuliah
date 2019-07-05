@@ -83,7 +83,7 @@
                         <div class="infobox-universitas">
                             <h3><span>Bandingkan Kampus</span></h3>
                             <p class="mt-4">
-                                @foreach ($m_universitas as $data_universitas)
+                                @forelse ($m_universitas as $data_universitas)
                                     <div class="card shadow paginate-universitas univ-list">
                                         <div class="card-body">
                                             <div class="row">
@@ -112,8 +112,12 @@
                                         </div>
                                     </div>
                                     {{$no++}}
-                                @endforeach
-                                <div id="page-nav-universitas"></div>
+                                @empty
+                                    Data universitas tidak ditemukan
+                                @endforelse
+                                @if (count($m_universitas) > 6)
+                                    <div id="page-nav-universitas"></div>
+                                @endif
                             </p>
                         </div>
                     </div>
@@ -125,7 +129,7 @@
                         <div class="infobox-jurusan">
                             <h3><span>Bandingkan Jurusan</span></h3>
                             <p>
-                                @foreach ($m_jurusan as $data_jurusan)
+                                @forelse ($m_jurusan as $data_jurusan)
                                     <div class="card shadow paginate-jurusan jurusan-list">
                                         <div class="card-body">
                                             <div class="row">
@@ -164,8 +168,12 @@
                                         </div>
                                     </div>
                                     {{$no++}}
-                                @endforeach
-                                <div id="page-nav-jurusan"></div>
+                                @empty
+                                    Data jurusan tidak ditemukan
+                                @endforelse
+                                @if (count($m_jurusan) > 6)
+                                    <div id="page-nav-jurusan"></div>
+                                @endif
                             </p>
                         </div>
                     </div>
