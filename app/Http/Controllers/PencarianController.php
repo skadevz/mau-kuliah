@@ -35,8 +35,8 @@ class PencarianController extends Controller
                             ->join($jurusan_tbl_name, $jenjuruniv_tbl_name . '.id_jurusan', '=', $jurusan_tbl_name . '.id_jurusan');
 
         $data['m_jurusan'] = Jurusan::select($universitas_tbl_name . '.id_universitas', $jurusan_tbl_name . '.id_jurusan', 'nama_jurusan', 'akreditasi_jurusan', 'akreditasi_universitas', 'nama_universitas', 'logo')
-                        ->join($universitas_jurusan_tbl_name, $jurusan_tbl_name . '.id_jurusan', '=', $universitas_jurusan_tbl_name . '.id_jurusan')
-                        ->join($universitas_tbl_name, $universitas_jurusan_tbl_name . '.id_universitas', '=', $universitas_tbl_name . '.id_universitas');
+                        ->join($jenjuruniv_tbl_name, $jurusan_tbl_name . '.id_jurusan', '=', $jenjuruniv_tbl_name . '.id_jurusan')
+                        ->join($universitas_tbl_name, $jenjuruniv_tbl_name . '.id_universitas', '=', $universitas_tbl_name . '.id_universitas');
 
         if ($value != null) {
             $data['m_universitas'] = $data['m_universitas']->where($jurusan_tbl_name . '.tag', 'like', '%' . $value . '%');
