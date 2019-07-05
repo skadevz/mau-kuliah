@@ -18,9 +18,9 @@ Route::get('logout', 'Auth\LoginController@logout')->name('logout');
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('berita', 'BeritaController@index')->name('berita.index');
 Route::get('search', 'PencarianController@index')->name('pencarian.index');
+Route::post('search', 'PencarianController@index')->name('pencarian.index');
 Route::post('perbandingan', 'PerbandinganController@index')->name('perbandingan.index');
 Route::get('peringkat-universitas', 'PeringkatUniversitasController@index')->name('peringkat_universitas');
-
 
 // Admin Page
 Route::group(['middleware' => 'auth', 'prefix' => 'admin'], function () {

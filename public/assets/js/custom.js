@@ -13,6 +13,14 @@
 
 }(jQuery));
 var maxBanding = 3;
+
+// PROSES PENCARIAN
+function search(token) {
+    var urlAct = window.location.origin + '/search';
+    var value = $('.form-search').val();
+
+    $.redirect(urlAct, {'_token': token, 'value': value});
+}
 $(document).ready(function() {
     $.ajaxSetup({
         headers: {
