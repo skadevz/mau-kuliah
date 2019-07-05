@@ -242,15 +242,16 @@ function setCheckBoxUniversitas() {
 
 function setUniversitasBanding() {
     if ($.cookie('compare_univ_id') == undefined) return;
-
     var compare_list_id = $.parseJSON($.cookie('compare_univ_id'));
     var compare_list_name = $.parseJSON($.cookie('compare_univ_name'));
     var compare_list_img = $.parseJSON($.cookie('compare_univ_img'));
     if (compare_list_id.length === 0) {
-        $('#comparison').addClass("close");
+        console.log('tidak');
+        $('#comparison').removeClass("close");
         $('#disable_jurusan').remove();
     }else{
-        $('#comparison').removeClass("close");
+        console.log('ada');
+        $('#comparison').addClass("close");
         $('.infobox-jurusan').before('<div id="disable_jurusan"></div>');
     }
     $.each(compare_list_img, function(key, val) {
@@ -403,10 +404,10 @@ function setJurusanBanding() {
     var compare_list_img = $.parseJSON($.cookie('compare_jurusan_img'));
 
     if (compare_list_id.length === 0) {
-        $('#comparison').addClass("close");
+        $('#comparison').removeClass("close");
         $('#disable_universitas').remove();
     }else{
-        $('#comparison').removeClass("close");
+        $('#comparison').addClass("close");
         $('.infobox-universitas').before('<div id="disable_universitas"></div>');
     }
     $.each(compare_list_img, function(key, val) {
