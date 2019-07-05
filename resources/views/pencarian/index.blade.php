@@ -192,3 +192,21 @@
         </div>
     </div>
 @endsection
+
+@section('js')
+    <script type="text/javascript">
+        $(document).ready(function () {
+            $('.searchButton').on('click', function () {
+                var token = '{{ csrf_token() }}'
+                search(token);
+            });
+
+            $('.form-search').keydown(function (e) {
+                if (e.keyCode == 13) {
+                    var token = '{{ csrf_token() }}'
+                    search(token);
+                }
+            })
+        })
+    </script>
+@endsection
