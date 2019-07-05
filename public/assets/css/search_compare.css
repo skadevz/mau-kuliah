@@ -41,23 +41,15 @@
 }
 
 #comparison .comparison-title {
-    font-size: 12px;
     line-height: 16px;
     width: 25%;
     float: left;
 }
 
 #comparison .comparison-title p {
-    width: 290px;
-    font-size: 12px;
     color: #0C2E60;
-}
-
-#comparison .comparison-title .go-to-compare {
-    position: relative;
-    right: initial;
-    right: inherit;
-    display: none;
+    font-size: 12px;
+    font-weight: normal;
 }
 
 #comparison .comparison-wrapper {
@@ -145,9 +137,10 @@
     right: -30px;
     top: 50%;
     border: 1px solid #00a0e9;
-    padding: 7px 30px;
+    padding: 10px 30px;
     color: #00a0e9;
     font-size: 12px;
+    font-weight: normal;
     text-align: center;
     margin-top: -16px;
     transition: all 0.3s;
@@ -290,6 +283,7 @@
         right: 0;
         margin: 50px 20px 20px 20px;
         font-size: 14px;
+        font-weight: normal;
         text-transform: uppercase;
     }
 
