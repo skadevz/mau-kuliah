@@ -64,7 +64,13 @@
                                 </select>
                             </div>
                             <div class="col-md-3">
-                                &nbsp;
+                                <select id="select-sistem-perkuliahan" style="width: 100%">
+                                    <option value="all">Semua Sistem Perkuliahan</option>
+                                    <option value="1">Reguler</option>
+                                    <option value="2">Online</option>
+                                    <option value="3">Karyawan Malam</option>
+                                    <option value="4">Karyawan Sabtu - Minggu</option>
+                                </select>
                             </div>
                         </div>
                     </form>
@@ -75,31 +81,31 @@
                     <div class="infobox-container">
                         <div class="triangle-l"></div>
                         <div class="triangle-r"></div>
-                        <div class="infobox">
+                        <div class="infobox-universitas">
                             <h3><span>Bandingkan Kampus</span></h3>
                             <p class="mt-4">
-                                @foreach ($m_universitas as $item)
-                                    <div class="card shadow paginate univ-list">
+                                @foreach ($m_universitas as $data_universitas)
+                                    <div class="card shadow paginate-universitas univ-list">
                                         <div class="card-body">
                                             <div class="row">
                                                 <div class="col-lg-3 col-md-12 col-xs-12 col-sm-12  text-center">
                                                     <div class="f_icon univ-list-logo">
-                                                        <img src="{{ asset('assets/img/kampus/' . $item->logo) }}">
+                                                        <img src="{{ asset('assets/img/kampus/' . $data_universitas->logo) }}">
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-9 col-md-12 col-xs-12 col-sm-12 content-kampus">
-                                                    <h4 class="nama-universitas">{{ $item->nama_universitas }}</h4>
+                                                    <h4 class="nama-universitas">{{ $data_universitas->nama_universitas }}</h4>
                                                     <span class="alamat-universitas">
-                                                        <i class="fa fa-map-marker"></i> {{ $item->alamat_universitas }}
+                                                        <i class="fa fa-map-marker"></i> {{ $data_universitas->alamat_universitas }}
                                                     </span>
                                                     <p>
-                                                        Akreditasi : <span class="akreditasi">{{$item->akreditasi_universitas}}</span>
+                                                        Akreditasi : <span class="akreditasi">{{$data_universitas->akreditasi_universitas}}</span>
                                                     </p>
                                                     <hr>
                                                     <div class="custom-control custom-checkbox tombol-checkbox">
                                                         <div class="fixer-container">
-                                                            <input type="checkbox" class="custom-control-input box-compare" value="{{$item->id_universitas}}" id="customCheck-{{$item->id_universitas}}">
-                                                            <label class="custom-control-label" for="customCheck-{{$item->id_universitas}}">Bandingkan</label>
+                                                            <input type="checkbox" class="custom-control-input box-compare-universitas" value="{{$data_universitas->id_universitas}}" id="customCheck-{{$data_universitas->id_universitas}}">
+                                                            <label class="custom-control-label" for="customCheck-{{$data_universitas->id_universitas}}">Bandingkan</label>
                                                         </div>
                                                     </div>
                                                 </div>
@@ -108,7 +114,7 @@
                                     </div>
                                     {{$no++}}
                                 @endforeach
-                                <div id="page-nav"></div>
+                                <div id="page-nav-universitas"></div>
                             </p>
                         </div>
                     </div>
@@ -117,10 +123,50 @@
                     <div class="infobox-container">
                         <div class="triangle-l"></div>
                         <div class="triangle-r"></div>
-                        <div class="infobox">
+                        <div class="infobox-jurusan">
                             <h3><span>Bandingkan Jurusan</span></h3>
                             <p>
-                                This is the content of the infobox.
+                                @foreach ($m_jurusan as $data_jurusan)
+                                    <div class="card shadow paginate-jurusan jurusan-list">
+                                        <div class="card-body">
+                                            <div class="row">
+                                                <div class="col-lg-3 col-md-12 col-xs-12 col-sm-12  text-center">
+                                                    <div class="f_icon jurusan-list-logo">
+                                                        <img src="{{ asset('assets/img/kampus/' . $data_jurusan->logo) }}">
+                                                    </div>
+                                                </div>
+                                                <div class="col-lg-9 col-md-12 col-xs-12 col-sm-12 content-kampus">
+                                                    <h4 class="nama-jurusan">{{ $data_jurusan->nama_jurusan }}</h4>
+                                                    <span class="alamat-universitas">
+                                                        <i class="fa fa-map-marker"></i> {{ $data_jurusan->nama_universitas }}
+                                                    </span>
+                                                    <p>
+                                                        <b>Akreditasi</b>
+                                                        <div style="padding-left: 20px;">
+                                                            <ul style="color:#888888; list-style-type:disc;">
+                                                                <li>
+                                                                    Jurusan : <span class="akreditasi">{{$data_jurusan->akreditasi_jurusan}}</span>
+                                                                </li>
+                                                                <li>
+                                                                    Kampus : <span class="akreditasi">{{$data_jurusan->akreditasi_universitas}}</span>
+                                                                </li>
+                                                            </ul>
+                                                        </div>
+                                                    </p>
+                                                    <hr>
+                                                    <div class="custom-control custom-checkbox tombol-checkbox">
+                                                        <div class="fixer-container">
+                                                            <input type="checkbox" class="custom-control-input box-compare-jurusan" value="{{$data_jurusan->id_jurusan.'_'.$data_jurusan->id_universitas}}" id="customCheck-{{$data_jurusan->id_jurusan.'_'.$data_jurusan->id_universitas}}">
+                                                            <label class="custom-control-label" for="customCheck-{{$data_jurusan->id_jurusan.'_'.$data_jurusan->id_universitas}}">Bandingkan</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    {{$no++}}
+                                @endforeach
+                                <div id="page-nav-jurusan"></div>
                             </p>
                         </div>
                     </div>
@@ -143,7 +189,7 @@
             <div class="comparison-items">
                 <ul class="comparison-ul"></ul>
             </div>
-            <a class="go-to-compare">Bandingkan</a>
+            <a class="go-to-compare" onclick="prosesSubmitBanding('{{route('perbandingan.index')}}', '{{ csrf_token() }}')">Bandingkan</a>
         </div>
     </div>
 @endsection
