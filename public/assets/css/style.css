@@ -3043,6 +3043,7 @@ ul {
         height: 220px;
         background-size:52%;
         background-position: bottom left;
+        background-image: none;
     }
 }
 
@@ -3056,6 +3057,7 @@ ul {
 
     .banner_part_search {
         background-size:70%;
+        background-image: none;
     }
 }
 
@@ -8655,6 +8657,7 @@ h6 {
     background: url(../img/footer-bg.jpg) no-repeat scroll center center;
     background-size: cover;
     padding: 130px 0px 115px 0px;
+    margin-top: 50px;
 }
 
 .f_about_widget {
