@@ -23,6 +23,7 @@
         <link rel="stylesheet" href="{{ asset('assets/plugins/sweetalert/sweetalert.css') }}" />
         <link rel="stylesheet" href="{{ asset('assets/css/simplePagination.css') }}" />
         <link rel="stylesheet" href="{{ asset('assets/css/select2.min.css') }}" />
+        <link rel="stylesheet" href="{{ asset('assets/css/compare.css') }}" />
         @yield('css')
     </head>
 
