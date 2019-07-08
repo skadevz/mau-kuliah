@@ -23,7 +23,6 @@
         <link rel="stylesheet" href="{{ asset('assets/plugins/sweetalert/sweetalert.css') }}" />
         <link rel="stylesheet" href="{{ asset('assets/css/simplePagination.css') }}" />
         <link rel="stylesheet" href="{{ asset('assets/css/select2.min.css') }}" />
-        <link rel="stylesheet" href="{{ asset('assets/css/compare.css') }}" />
         @yield('css')
     </head>
 
@@ -32,14 +31,14 @@
     @yield('content')
     @include('layouts.footer')
     </body>
-    <script src="{{ asset('assets/js/jquery-1.12.1.min.js') }}"></script>
-    <script src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
-    <script src="{{ asset('assets/js/custom.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.simplePagination.js') }}"></script>
-    <script src="{{ asset('assets/js/select2.min.js') }}"></script>
-    <script src="{{ asset('assets/plugins/sweetalert/sweetalert.min.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.cookie.js') }}"></script>
-    <script src="{{ asset('assets/js/jquery.redirect.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/jquery-1.12.1.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/bootstrap.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/custom.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/jquery.simplePagination.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/select2.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/plugins/sweetalert/sweetalert.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/jquery.cookie.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/js/jquery.redirect.js') }}"></script>
     @include('sweet::alert')
     @yield('js')
 </html>

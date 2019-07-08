@@ -203,6 +203,7 @@
 @endsection
 
 @section('js')
+    <script type="text/javascript" src="{{ asset('assets/js/pencarian.js') }}"></script>
     <script type="text/javascript">
         $(document).ready(function () {
             $('.searchButton').on('click', function () {
