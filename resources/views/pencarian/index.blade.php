@@ -35,11 +35,12 @@
                     <form>
                         <div class="form-row">
                             <div class="col-md-3">
-                                <select id="select-lokasi-kampus" name="states[]" multiple="multiple" style="width: 100%">
+                                <select id="select-lokasi-kampus" style="width: 100%">
+                                    <option value="all">Semua Lokasi</option>
                                     @foreach ($m_lokasi as $item)
                                         <optgroup label="{{ $item->nama }}">
                                             @foreach ($item->kota as $kota)
-                                                <option value="{{ $kota->id_kota }}">{{$kota->nama}}</option>
+                                                <option value="{{ $kota->id_kota }}" @if($kota->id_kota == $lokasi_kampus) selected @endif>{{$kota->nama}}</option>
                                             @endforeach
                                         </optgroup>
                                     @endforeach
@@ -47,28 +48,28 @@
                             </div>
                             <div class="col-md-3">
                                 <select id="select-tipe-kampus" style="width: 100%">
-                                    <option value="all">Negeri / Swasta</option>
-                                    <option value="negeri">Negeri</option>
-                                    <option value="swasta">Swasta</option>
+                                    <option value="all">Semua Tipe</option>
+                                    <option value="negeri" @if($tipe_kampus == 'negeri') selected @endif>Negeri</option>
+                                    <option value="swasta" @if($tipe_kampus == 'swasta') selected @endif>Swasta</option>
                                 </select>
                             </div>
                             <div class="col-md-3">
                                 <select id="select-akreditasi-kampus" style="width: 100%">
-                                    <option value="all">Semua Akreditasi</option>
-                                    <option value="A">A</option>
-                                    <option value="B">B</option>
-                                    <option value="C">C</option>
-                                    <option value="D">D</option>
-                                    <option value="E">E</option>
+                                    <option value="all" selected>Semua Akreditasi</option>
+                                    <option value="A" @if($akreditasi_kampus == 'A') selected @endif>A</option>
+                                    <option value="B" @if($akreditasi_kampus == 'B') selected @endif>B</option>
+                                    <option value="C" @if($akreditasi_kampus == 'C') selected @endif>C</option>
+                                    <option value="D" @if($akreditasi_kampus == 'D') selected @endif>D</option>
+                                    <option value="E" @if($akreditasi_kampus == 'E') selected @endif>E</option>
                                 </select>
                             </div>
                             <div class="col-md-3">
                                 <select id="select-sistem-perkuliahan" style="width: 100%">
                                     <option value="all">Semua Sistem Perkuliahan</option>
-                                    <option value="1">Reguler</option>
-                                    <option value="2">Online</option>
-                                    <option value="3">Karyawan Malam</option>
-                                    <option value="4">Karyawan Sabtu - Minggu</option>
+                                    <option value="1" @if($sistem_perkuliahan == 1) selected @endif>Reguler</option>
+                                    <option value="2" @if($sistem_perkuliahan == 2) selected @endif>Online</option>
+                                    <option value="3" @if($sistem_perkuliahan == 3) selected @endif>Karyawan Malam</option>
+                                    <option value="4" @if($sistem_perkuliahan == 4) selected @endif>Karyawan Sabtu - Minggu</option>
                                 </select>
                             </div>
                         </div>
@@ -171,7 +172,7 @@
                                 @empty
                                     Data jurusan tidak ditemukan
                                 @endforelse
-                                @if (count($m_jurusan) > 6)
+                                @if (count($m_jurusan) > 5)
                                     <div id="page-nav-jurusan"></div>
                                 @endif
                             </p>
@@ -214,6 +215,41 @@
                     var token = '{{ csrf_token() }}'
                     search(token);
                 }
+            });
+
+            function formSearch() {
+                var urlAct = window.location.origin + '/search'
+                var token = '{{ csrf_token() }}';
+                var value = '{{ $value }}';
+                var lokasi_kampus = $('#select-lokasi-kampus').val();
+                var tipe_kampus = $('#select-tipe-kampus').val();
+                var akreditasi_kampus = $('#select-akreditasi-kampus').val();
+                var sistem_perkuliahan = $('#select-sistem-perkuliahan').val();
+
+                $.redirect(urlAct, {
+                    '_token': token,
+                    'value': value,
+                    'lokasi_kampus': lokasi_kampus,
+                    'tipe_kampus': tipe_kampus,
+                    'akreditasi_kampus': akreditasi_kampus,
+                    'sistem_perkuliahan': sistem_perkuliahan,
+                });
+            }
+
+            $('#select-lokasi-kampus').on('change', function () {
+                formSearch();
+            })
+
+            $('#select-tipe-kampus').on('change', function () {
+                formSearch();
+            })
+
+            $('#select-akreditasi-kampus').on('change', function () {
+                formSearch();
+            })
+
+            $('#select-sistem-perkuliahan').on('change', function () {
+                formSearch();
             })
         })
     </script>

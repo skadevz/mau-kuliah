@@ -20,7 +20,7 @@ class CreateMUniversitasTable extends Migration
             $table->char('akreditasi_universitas', 1);
             $table->string('alamat_universitas');
             $table->integer('id_kecamatan');
-            $table->integer('id_kota');
+            $table->char('id_kota', 4);
             $table->integer('id_provinsi');
             $table->string('telepon_universitas')->nullable();
             $table->string('fax_universitas')->nullable();
@@ -30,7 +30,8 @@ class CreateMUniversitasTable extends Migration
             $table->string('nomor_sk')->nullable();
             $table->string('tangal_sk')->nullable();
             $table->string('logo')->default('default_kampus.png')->nullable();
-            $table->string('sistem_pembelajaran')->nullable();
+            $table->string('tipe_kampus')->nullable();
+            $table->string('sistem_perkuliahan')->nullable();
             $table->timestamps();
         });
     }
