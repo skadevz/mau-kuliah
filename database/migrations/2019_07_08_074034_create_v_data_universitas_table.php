@@ -30,7 +30,9 @@ class CreateVDataUniversitasTable extends Migration
         mu.sistem_perkuliahan,
         mj.nama_jurusan,
         pjju.akreditasi_jurusan,
-        mje.nama_jenjang
+        mje.nama_jenjang,
+        pjju.id_universitas,
+        pjju.id_jurusan
         FROM m_universitas mu
         JOIN pvt_jenjang_jurusan_universitas pjju ON mu.id_universitas =
         pjju.id_universitas
