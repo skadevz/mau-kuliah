@@ -70,8 +70,8 @@ class PencarianController extends Controller
         }
 
         if ($data['sistem_perkuliahan'] != null  && $data['sistem_perkuliahan'] != 'all') {
-            $data['m_universitas'] = $data['m_universitas']->where($universitas_tbl_name . '.sistem_perkuliahan', $data['sistem_perkuliahan']);
-            $data['m_jurusan'] = $data['m_jurusan']->where($universitas_tbl_name . '.sistem_perkuliahan', $data['sistem_perkuliahan']);
+            $data['m_universitas'] = $data['m_universitas']->where($universitas_tbl_name . '.sistem_perkuliahan', 'ilike', '%' . $data['sistem_perkuliahan'] . '%');
+            $data['m_jurusan'] = $data['m_jurusan']->where($universitas_tbl_name . '.sistem_perkuliahan', 'ilike', '%' . $data['sistem_perkuliahan'] . '%');
         }
 
         $data['m_universitas'] = $data['m_universitas']->orderBy($universitas_tbl_name . '.akreditasi_universitas')

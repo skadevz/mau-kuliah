@@ -10,9 +10,10 @@ class HomeController extends Controller
 {
     public function index() {
         // $ip = request()->ip();
-        $ip = '116.206.40.86';
+        // $ip = '116.206.40.86'; // Surabaya
+        $ip = '202.80.212.141'; // Jakarta
         $client = new \GuzzleHttp\Client();
-        $response = $client->request('GET', "https://ipapi.co/$ip/json");
+        $response = $client->request('GET', "https://ipapi.co/$ip/json", ['verify' => false]);
 
         $location = json_decode($response->getBody());
 
