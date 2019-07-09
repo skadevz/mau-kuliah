@@ -17,6 +17,7 @@ class CreateMUniversitasTable extends Migration
             $table->bigIncrements('id_universitas');
             $table->string('nama_universitas');
             $table->string('nama_pendek')->nullable();
+            $table->string('slug');
             $table->char('akreditasi_universitas', 1);
             $table->string('alamat_universitas');
             $table->integer('id_kecamatan');

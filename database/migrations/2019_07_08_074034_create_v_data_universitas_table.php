@@ -18,6 +18,7 @@ class CreateVDataUniversitasTable extends Migration
         AS
         SELECT mu.nama_universitas,
         mu.akreditasi_universitas,
+        mu.slug,
         mu.alamat_universitas AS telepon_universitas,
         mu.fax_universitas,
         mu.email_universitas,

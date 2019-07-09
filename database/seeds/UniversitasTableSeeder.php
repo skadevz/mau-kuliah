@@ -15,6 +15,7 @@ class UniversitasTableSeeder extends Seeder
         Universitas::create([
             'nama_universitas' => 'Universitas Bina Nusantara',
             'nama_pendek' => 'BINUS',
+            'slug' => str_slug('Universitas Bina Nusantara'),
             'akreditasi_universitas' => 'A',
             'alamat_universitas' => 'Jl KH Syahdan No 9 Palmerah 11480 D.K.I. Jakarta',
             'id_kecamatan' => '3174030',
@@ -28,6 +29,7 @@ class UniversitasTableSeeder extends Seeder
         Universitas::create([
             'nama_universitas' => 'Institut Teknologi Sepuluh November',
             'nama_pendek' => 'ITS',
+            'slug' => str_slug('Institut Teknologi Sepuluh November'),
             'akreditasi_universitas' => 'A',
             'alamat_universitas' => 'Kampus ITS Sukolilo, Jawa Timur 60111',
             'id_kecamatan' => '3578080',
@@ -41,6 +43,7 @@ class UniversitasTableSeeder extends Seeder
         Universitas::create([
             'nama_universitas' => 'Universitas Telkom',
             'nama_pendek' => 'TELU',
+            'slug' => str_slug('Universitas Telkom'),
             'akreditasi_universitas' => 'A',
             'alamat_universitas' => 'Jl. Telekomunikasi Terusan Buah Batu Bandung 40257',
             'id_kecamatan' => '3273090',
@@ -54,6 +57,7 @@ class UniversitasTableSeeder extends Seeder
         Universitas::create([
             'nama_universitas' => 'Universitas Indonesia',
             'nama_pendek' => 'UI',
+            'slug' => str_slug('Universitas Indonesia'),
             'akreditasi_universitas' => 'A',
             'alamat_universitas' => 'Pd. Cina, Beji, Jawa Barat 16424',
             'id_kecamatan' => '3276050',
@@ -67,6 +71,7 @@ class UniversitasTableSeeder extends Seeder
         Universitas::create([
             'nama_universitas' => 'Universitas Airlangga',
             'nama_pendek' => 'UNAIR',
+            'slug' => str_slug('Universitas Airlangga'),
             'akreditasi_universitas' => 'A',
             'alamat_universitas' => 'Jl. Airlangga No. 4 - 6, Airlangga, Gubeng, Jawa Timur 60115',
             'id_kecamatan' => '3578100',
@@ -80,6 +85,7 @@ class UniversitasTableSeeder extends Seeder
         Universitas::create([
             'nama_universitas' => 'Universitas Negeri Medan',
             'nama_pendek' => 'UNIMED',
+            'slug' => str_slug('Universitas Negeri Medan'),
             'akreditasi_universitas' => 'A',
             'alamat_universitas' => 'Jalan Willem Iskandar Pasar V Medan Estate Sumatera Utara 20221',
             'id_kecamatan' => '1275170',
@@ -93,6 +99,7 @@ class UniversitasTableSeeder extends Seeder
         Universitas::create([
             'nama_universitas' => 'Universitas Negeri Semarang',
             'nama_pendek' => 'UNNES',
+            'slug' => str_slug('Universitas Negeri Semarang'),
             'akreditasi_universitas' => 'A',
             'alamat_universitas' => 'Gedung H Kampus Sekaran Gunungpati Semarang 50229',
             'id_kecamatan' => '3374020',
@@ -106,6 +113,7 @@ class UniversitasTableSeeder extends Seeder
         Universitas::create([
             'nama_universitas' => 'Universitas Brawijaya',
             'nama_pendek' => 'UNBRAW',
+            'slug' => str_slug('Universitas Brawijaya'),
             'akreditasi_universitas' => 'A',
             'alamat_universitas' => 'Jalan Veteran Kec. Lowokwaru, Kota Malang, Jawa Timur',
             'id_kecamatan' => '3573050',
@@ -119,6 +127,7 @@ class UniversitasTableSeeder extends Seeder
         Universitas::create([
             'nama_universitas' => 'Institut Teknologi Bandung',
             'nama_pendek' => 'ITB',
+            'slug' => str_slug('Institut Teknologi Bandung'),
             'akreditasi_universitas' => 'A',
             'alamat_universitas' => 'Jl. Ganesha 10, Jawa Barat 40132',
             'id_kecamatan' => '3273230',

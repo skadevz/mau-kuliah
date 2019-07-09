@@ -19,7 +19,7 @@ class FasilitasTableSeeder extends Seeder
         Fasilitas::create(['nama_fasilitas' => 'Gedung Pertemuan', 'icon' => 'bank']);
         Fasilitas::create(['nama_fasilitas' => 'Perpustakaan', 'icon' => 'bank']);
         Fasilitas::create(['nama_fasilitas' => 'Tempat Ibadah', 'icon' => 'building']);
-        Fasilitas::create(['nama_fasilitas' => 'Laboratorium', 'icon' => '']);
+        Fasilitas::create(['nama_fasilitas' => 'Laboratorium', 'icon' => 'flask']);
         Fasilitas::create(['nama_fasilitas' => 'Fasilitas Olahraga', 'icon' => 'soccer-ball-o']);
     }
 }

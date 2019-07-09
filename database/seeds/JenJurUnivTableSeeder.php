@@ -20,6 +20,20 @@ class JenJurUnivTableSeeder extends Seeder
         ]);
 
         JenJurUniv::create([
+            'id_jenjang' => 6,
+            'id_jurusan' => 10,
+            'id_universitas' => 9,
+            'akreditasi_jurusan' => '-'
+        ]);
+
+        JenJurUniv::create([
+            'id_jenjang' => 6,
+            'id_jurusan' => 11,
+            'id_universitas' => 9,
+            'akreditasi_jurusan' => 'C'
+        ]);
+
+        JenJurUniv::create([
             'id_jenjang' => 5,
             'id_jurusan' => 4,
             'id_universitas' => 9,

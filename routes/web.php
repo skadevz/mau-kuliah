@@ -21,7 +21,7 @@ Route::get('search', 'PencarianController@index')->name('pencarian.index');
 Route::post('search', 'PencarianController@index')->name('pencarian.index');
 Route::post('perbandingan', 'PerbandinganController@index')->name('perbandingan.index');
 Route::get('peringkat-universitas', 'PeringkatUniversitasController@index')->name('peringkat_universitas');
-Route::get('universitas/{nama?}', 'UniversitasController@index')->name('universitas.index');
+Route::get('universitas/{slug?}', 'UniversitasController@index')->name('universitas.index');
 
 // Admin Page
 Route::group(['middleware' => 'auth', 'prefix' => 'admin', 'as' => 'admin.'], function () {
