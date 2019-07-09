@@ -30,7 +30,7 @@ class PencarianController extends Controller
         $data['sistem_perkuliahan'] = $request->input('sistem_perkuliahan');
 
         $data['m_lokasi'] = Provinsi::get();
-        $data['m_universitas'] = Universitas::select($universitas_tbl_name . '.id_universitas', 'nama_universitas', 'alamat_universitas', 'akreditasi_universitas', 'logo')
+        $data['m_universitas'] = Universitas::select($universitas_tbl_name . '.id_universitas', 'nama_universitas', 'slug', 'alamat_universitas', 'akreditasi_universitas', 'logo')
                             ->join($jenjuruniv_tbl_name, $universitas_tbl_name . '.id_universitas', '=', $jenjuruniv_tbl_name . '.id_universitas')
                             ->join($jurusan_tbl_name, $jenjuruniv_tbl_name . '.id_jurusan', '=', $jurusan_tbl_name . '.id_jurusan');
 

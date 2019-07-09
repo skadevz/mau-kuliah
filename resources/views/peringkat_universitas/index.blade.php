@@ -107,7 +107,9 @@
                                     <img src="{{ asset('assets/img/kampus/' . $item->logo) }}" class="logo-universitas">
                                 </div>
                                 <div class="col-sm-6">
-                                    <h3 class="nama-universitas">{{ $item->nama_universitas }}</h3>
+                                    <a href="{{ route('universitas.index', ['slug' => $item->slug]) }}">
+                                        <h3 class="nama-universitas">{{ $item->nama_universitas }}</h3>
+                                    </a>
                                     <hr>
                                     <span class="alamat-universitas">
                                         <i class="fa fa-map-marker"></i> {{ $item->alamat_universitas }}

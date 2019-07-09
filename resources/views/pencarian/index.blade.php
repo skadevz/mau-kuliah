@@ -94,7 +94,9 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-9 col-md-12 col-xs-12 col-sm-12 content-kampus">
-                                                    <h4 class="nama-universitas">{{ $data_universitas->nama_universitas }}</h4>
+                                                    <a href="{{ route('universitas.index', ['slug' => $data_universitas->slug]) }}">
+                                                        <h4 class="nama-universitas">{{ $data_universitas->nama_universitas }}</h4>
+                                                    </a>
                                                     <span class="alamat-universitas">
                                                         <i class="fa fa-map-marker"></i> {{ $data_universitas->alamat_universitas }}
                                                     </span>
