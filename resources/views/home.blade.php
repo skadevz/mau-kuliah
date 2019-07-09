@@ -60,7 +60,7 @@
                         </div>
                     </div>
                     <br />
-                    <center><a href="#" class="btn_1">Lihat Review Kampus</a></center>
+                    <center><a href="{{ route('universitas.index', ['slug' => $item->slug]) }}" class="btn_1">Lihat Review Kampus</a></center>
                 </div>
             </div>
             @endforeach

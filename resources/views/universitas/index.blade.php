@@ -30,23 +30,23 @@
                                     </ul> --}}
                                     <div class="container">
                                         <div class="row">
-                                            <div class="col-md" style="font-weight: bold;"><i class="fa fa-bolt"></i> Nama</div>
+                                            <div class="col-md-3" style="font-weight: bold;"><i class="fa fa-bolt"></i> Nama</div>
                                             <div class="col-md">{{ $universitas->nama_universitas }}</div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md" style="font-weight: bold;"><i class="fa fa-bolt"></i> Akreditasi</div>
+                                            <div class="col-md-3" style="font-weight: bold;"><i class="fa fa-bolt"></i> Akreditasi</div>
                                             <div class="col-md">{{ $universitas->akreditasi_universitas }}</div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md" style="font-weight: bold;"><i class="fa fa-bolt"></i> Alamat</div>
+                                            <div class="col-md-3" style="font-weight: bold;"><i class="fa fa-bolt"></i> Alamat</div>
                                             <div class="col-md">{{ $universitas->alamat_universitas }}</div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md" style="font-weight: bold;"><i class="fa fa-bolt"></i> Telepon</div>
+                                            <div class="col-md-3" style="font-weight: bold;"><i class="fa fa-bolt"></i> Telepon</div>
                                             <div class="col-md">{{ $universitas->telepon_universitas ?: 'N/A' }}</div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md" style="font-weight: bold;"><i class="fa fa-bolt"></i> Fax</div>
+                                            <div class="col-md-3" style="font-weight: bold;"><i class="fa fa-bolt"></i> Fax</div>
                                             <div class="col-md">{{ $universitas->fax_universitas ?: 'N/A' }}</div>
                                         </div>
                                     </div>
@@ -54,23 +54,23 @@
                                 <div class="list-compare-item col-md">
                                     <div class="container">
                                         <div class="row">
-                                            <div class="col-md" style="font-weight: bold;"><i class="fa fa-bolt"></i> Email</div>
+                                            <div class="col-md-3" style="font-weight: bold;"><i class="fa fa-bolt"></i> Email</div>
                                             <div class="col-md">{{ $universitas->email_universitas ?: 'N/A' }}</div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md" style="font-weight: bold;"><i class="fa fa-bolt"></i> Website</div>
+                                            <div class="col-md-3" style="font-weight: bold;"><i class="fa fa-bolt"></i> Website</div>
                                             <div class="col-md">{{ $universitas->website_universitas ?: 'N/A' }}</div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md" style="font-weight: bold;"><i class="fa fa-bolt"></i> Tanggal Berdiri</div>
+                                            <div class="col-md-3" style="font-weight: bold;"><i class="fa fa-bolt"></i> Tanggal Berdiri</div>
                                             <div class="col-md">{{ $universitas->tanggal_berdiri ?: 'N/A' }}</div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md" style="font-weight: bold;"><i class="fa fa-bolt"></i> No. SK</div>
+                                            <div class="col-md-3" style="font-weight: bold;"><i class="fa fa-bolt"></i> No. SK</div>
                                             <div class="col-md">{{ $universitas->nomor_sk ?: 'N/A' }}</div>
                                         </div>
                                         <div class="row">
-                                            <div class="col-md" style="font-weight: bold;"><i class="fa fa-bolt"></i> Tanggal SK</div>
+                                            <div class="col-md-3" style="font-weight: bold;"><i class="fa fa-bolt"></i> Tanggal SK</div>
                                             <div class="col-md">{{ $universitas->tanggal_sk ?: 'N/A' }}</div>
                                         </div>
                                     </div>

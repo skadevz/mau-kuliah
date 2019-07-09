@@ -142,7 +142,7 @@
                                                     </div>
                                                 </div>
                                                 <div class="col-lg-9 col-md-12 col-xs-12 col-sm-12 content-kampus">
-                                                    <h4 class="nama-jurusan">{{ $data_jurusan->nama_jurusan }}</h4>
+                                                    <h4 class="nama-universitas">{{ $data_jurusan->nama_jurusan }}</h4>
                                                     <span class="alamat-universitas">
                                                         <i class="fa fa-map-marker"></i> {{ $data_jurusan->nama_universitas }}
                                                     </span>
