@@ -10,7 +10,10 @@ class PerbandinganController extends Controller
 {
     public function index()
     {
-        $id_universitas = request()->var_id_universitas;
+        // $id_universitas = request()->var_id_universitas;
+
+        $id_universitas = json_decode($_COOKIE['compare_univ_id']);
+
         if(empty($id_universitas)){
             //PERBANDINGAN JURUSAN
             $data['tampilan'] = 'jurusan';

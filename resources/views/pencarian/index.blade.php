@@ -192,9 +192,9 @@
             <div class="comparison-title">
                 <h3 class="title">
                     <input type="hidden" name="flag_compare" id="flag_compare" class="flag_compare" value="0">
-                    Perbandingan Produk
+                    Perbandingan <span class="nama-banding"></span>
                 </h3>
-                <p class="info">Produk ditambahkan ke perbandingan. Tambahkan hingga 4 produk atau melanjutkan untuk melihat perbandingan produk yang dipilih.</p>
+                <p class="info"><span class="nama-banding"></span> ditambahkan ke perbandingan. Tambahkan hingga 3 <span class="nama-banding"></span> atau melanjutkan untuk melihat perbandingan <span class="nama-banding"></span> yang dipilih.</p>
             </div>
             <div class="comparison-items">
                 <ul class="comparison-ul"></ul>
