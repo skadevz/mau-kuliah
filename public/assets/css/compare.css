@@ -10,7 +10,7 @@
     position: fixed;
     top: -85px;
     background: rgba(238, 238, 238, 0.89);
-    width: 75%;
+    width: 100%;
     z-index: 9;
     height: 100px;
     border-bottom: 1px solid #FFF;
@@ -54,6 +54,7 @@
 }
 .fly-name.active {
     top: 85px;
+    position: sticky;
 }
 .data-wrap{
     align-items: center;
