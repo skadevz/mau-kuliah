@@ -95,7 +95,6 @@ function removeUniversitasBanding() {
         var data_id = $(this).data('id');
         var data_name = $(this).parent().find('.product-title').text();
         var data_img = $(this).parent().find('.div-image > img').attr('src');
-        // console.log(data_img); return false;
         removeElementCompare(data_id, data_name, data_img);
     });
 }
@@ -189,7 +188,6 @@ PERBANDINGAN JURUSAN
 */
 function getCompareJurusan(){
     $('body').on('change', '.box-compare-jurusan', function() {
-        // console.log('tyu'); return false;
         var nilai_flag = 0;
         var val_flag = $("#flag_compare").val();
 
@@ -271,7 +269,6 @@ function removeElementCompareJurusan(data_id, data_name, data_img) {
     var removeItemId = data_id;
     var removeItemName = data_name;
     var removeItemImg = data_img+'_'+data_id;
-    console.log(removeItemImg);return;
 
     compare_list_id = jQuery.grep(compare_list_id, function(value) {
         return value != removeItemId;
