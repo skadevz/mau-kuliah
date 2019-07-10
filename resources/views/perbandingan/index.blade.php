@@ -75,8 +75,8 @@
                         </div>
                         <div class="data-wrap">
                             <div class="row">
-                                @foreach ($m_universitas as $key => $data_universitas)
-                                    <div class="list-compare-item col-md div-{{$data_universitas->id_universitas}}">
+                                @forelse ($m_universitas as $key => $data_universitas)
+                                    <div class="col-md div-{{$data_universitas->id_universitas}}">
                                         <div class="row">
                                             <div class="col-md">
                                                 <table class="table">
@@ -101,13 +101,17 @@
                                                 </table>
                                             </div>
                                         </div>
-                                        <div class="row">
-                                            <div class="col-md">
-                                                <div id="page-nav-jurusan-detail-{{ $data_universitas->id_universitas }}"></div>
+                                        @if ($data_universitas->jurusan()->count() > 5)
+                                            <div class="row">
+                                                <div class="col-md">
+                                                    <div id="page-nav-jurusan-detail-{{ $data_universitas->id_universitas }}"></div>
+                                                </div>
                                             </div>
-                                        </div>
+                                        @endif
                                     </div>
-                                @endforeach
+                                @empty
+                                    Data jurusan tidak ditemukan
+                                @endforelse
                             </div>
                         </div>
                     </div>
@@ -120,8 +124,14 @@
                         <div class="data-wrap">
                             <div class="row">
                                 @foreach ($m_universitas as $key => $data_universitas)
-                                    <div class="list-compare-item col-md div-{{$data_universitas->id_universitas}}">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    <div class="col-md div-{{$data_universitas->id_universitas}}">
+                                        @foreach ($data_universitas->fasilitas as $key => $value)
+                                            <div class="col-md my-2">
+                                                <i class="fa fa-{{ $value->icon }}"></i>
+                                                &nbsp;
+                                                {{ $value->nama_fasilitas }}
+                                            </div>
+                                        @endforeach
                                     </div>
                                 @endforeach
                             </div>
@@ -136,8 +146,14 @@
                         <div class="data-wrap">
                             <div class="row">
                                 @foreach ($m_universitas as $key => $data_universitas)
-                                    <div class="list-compare-item col-md div-{{$data_universitas->id_universitas}}">
-                                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
+                                    <div class="col-md div-{{$data_universitas->id_universitas}}">
+                                        @foreach ($data_universitas->tempat_umum as $key => $value)
+                                            <div class="col-md my-2">
+                                                <i class="fa fa-{{ $value->icon }}"></i>
+                                                &nbsp;
+                                                {{ $value->nama_tempat_umum }}
+                                            </div>
+                                        @endforeach
                                     </div>
                                 @endforeach
                             </div>
@@ -153,27 +169,28 @@
 @section('js')
     <script type="text/javascript" src="{{ asset('assets/js/perbandingan.js') }}"></script>
     <script type="text/javascript">
-        var pagePartsJurusan = $(".paginate-jurusan-9");
-        var numPagesJurusan = pagePartsJurusan.length;
-        var perPageJurusan = 5;
-        pagePartsJurusan.slice(perPageJurusan).hide();
-        $("#page-nav-jurusan-detail-9").pagination({
-            items: numPagesJurusan,
-            itemsOnPage: perPageJurusan,
-            cssStyle: "light-theme",
-            // We implement the actual pagination
-            //   in this next function. It runs on
-            //   the event that a user changes page
-            onPageClick: function (pageNum) {
-                // Which page parts do we show?
-                var start = perPageJurusan * (pageNum - 1);
-                var end = start + perPageJurusan;
 
-                // First hide all page parts
-                // Then show those just for our page
-                pagePartsJurusan.hide()
-                .slice(start, end).show();
-            }
-        });
+        var cookie_compare_id = $.parseJSON($.cookie('compare_univ_id'));
+        for (var i = 0; i < cookie_compare_id.length; i++) {
+            startPagination(cookie_compare_id[i]);
+        }
+
+        function startPagination(univ_id) {
+            var pagePartsJurusan = $(".paginate-jurusan-" + univ_id);
+            var numPagesJurusan = pagePartsJurusan.length;
+            var perPageJurusan = 5;
+            pagePartsJurusan.slice(perPageJurusan).hide();
+            $("#page-nav-jurusan-detail-" + univ_id).pagination({
+                items: numPagesJurusan,
+                itemsOnPage: perPageJurusan,
+                cssStyle: "light-theme",
+                onPageClick: function (pageNum) {
+                    var start = perPageJurusan * (pageNum - 1);
+                    var end = start + perPageJurusan;
+                    pagePartsJurusan.hide()
+                    .slice(start, end).show();
+                }
+            });
+        }
     </script>
 @endsection
