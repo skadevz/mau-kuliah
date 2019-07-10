@@ -28,6 +28,7 @@ PERBANDINGAN UNIVERSITAS
 */
 function getCompareUniversitas(){
     $('body').on('change', '.box-compare-universitas', function() {
+        $('.nama-banding').empty().text('Universitas');
         var nilai_flag = 0;
         var val_flag = $("#flag_compare").val();
 
@@ -159,6 +160,7 @@ function setUniversitasBanding() {
         $('#comparison').removeClass("close");
         $('#disable_jurusan').remove();
     }else{
+        $('.nama-banding').empty().text('Universitas');
         $('#comparison').addClass("close");
         $('.infobox-jurusan').before('<div id="disable_jurusan"></div>');
     }
@@ -185,6 +187,7 @@ PERBANDINGAN JURUSAN
 function getCompareJurusan(){
     $('body').on('change', '.box-compare-jurusan', function() {
         // console.log('tyu'); return false;
+        $('.nama-banding').empty().text('Jurusan');
         var nilai_flag = 0;
         var val_flag = $("#flag_compare").val();
 
@@ -320,6 +323,7 @@ function setJurusanBanding() {
         $('#comparison').removeClass("close");
         $('#disable_universitas').remove();
     }else{
+        $('.nama-banding').empty().text('Jurusan');
         $('#comparison').addClass("close");
         $('.infobox-universitas').before('<div id="disable_universitas"></div>');
     }
