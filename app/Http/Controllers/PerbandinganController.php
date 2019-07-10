@@ -17,7 +17,7 @@ class PerbandinganController extends Controller
         if(empty($id_universitas)){
             //PERBANDINGAN JURUSAN
             $data['tampilan'] = 'jurusan';
-            $jurusan_univeritas = request()->var_id_jurusan;
+            $jurusan_univeritas = json_decode($_COOKIE['compare_jurusan_id']);
             // $data['pvt_jenjang_jurusan_universitas'] = JenJurUniv::orderBy('id_universitas');
             foreach ($jurusan_univeritas as $key => $dt_jurusan_univeritas) {
                 $var_jurusan_univeritas = explode('_',$dt_jurusan_univeritas);
