@@ -57,6 +57,10 @@ function getCompareUniversitas(){
                     $.cookie('compare_univ_id', JSON.stringify([data_id]));
                     $.cookie('compare_univ_name', JSON.stringify([data_name]));
                     $.cookie('compare_univ_img', JSON.stringify([data_img]));
+
+                    $.cookie('compare_jurusan_id', JSON.stringify([]));
+                    $.cookie('compare_jurusan_name', JSON.stringify([]));
+                    $.cookie('compare_jurusan_img', JSON.stringify([]));
                 } else {
                     var compare_list_id = $.parseJSON(cookie_compare_id);
                     var compare_list_name = $.parseJSON(cookie_compare_name);
@@ -189,7 +193,6 @@ function getCompareJurusan(){
         var cookie_compare_img = $.cookie('compare_jurusan_img');
 
         var data_id = $(this).val();
-        // console.log(data_id); return false;
         var data_name = $(this).closest('.jurusan-list').find('h4.nama-jurusan', this).text().trim();
         var data_img = $(this).closest('.jurusan-list').find('.jurusan-list-logo > img').attr('src');
 
@@ -211,6 +214,10 @@ function getCompareJurusan(){
                     $.cookie('compare_jurusan_id', JSON.stringify([data_id]));
                     $.cookie('compare_jurusan_name', JSON.stringify([data_name]));
                     $.cookie('compare_jurusan_img', JSON.stringify([data_img]));
+
+                    $.cookie('compare_univ_id', JSON.stringify([]));
+                    $.cookie('compare_univ_name', JSON.stringify([]));
+                    $.cookie('compare_univ_img', JSON.stringify([]));
                 } else {
                     var compare_list_id = $.parseJSON(cookie_compare_id);
                     var compare_list_name = $.parseJSON(cookie_compare_name);
@@ -222,6 +229,7 @@ function getCompareJurusan(){
                     $.cookie('compare_jurusan_id', JSON.stringify(compare_list_id));
                     $.cookie('compare_jurusan_name', JSON.stringify(compare_list_name));
                     $.cookie('compare_jurusan_img', JSON.stringify(compare_list_img));
+
                 }
                 $.cookie('total_perbandingan', nilai_flag);
                 setElementCompareJurusan(data_id, data_name, data_img);
@@ -336,28 +344,29 @@ function getBandingTotalJurusan() {
 */
 
 function prosesSubmitBanding(urlAct,token) {
-    var data_id_universitas = $.parseJSON($.cookie('compare_univ_id'));
-    var data_id_jurusan = $.parseJSON($.cookie('compare_jurusan_id'));
     if (($.cookie('compare_univ_id') == undefined) && ($.cookie('compare_jurusan_id') == undefined)) {
         Swal.fire({
             type: 'error',
             text: 'Daftar perbandingan tidak ada'
         });
-        return false;
-    }
-    if ((data_id_universitas.length === 0) && (data_id_jurusan.length === 0)) {
-        Swal.fire({
-            type: 'error',
-            text: 'Daftar perbandingan tidak ada'
-        });
-        return false;
-    }
-    if ((data_id_universitas.length === 1) || (data_id_jurusan.length === 1)) {
-        Swal.fire({
-            type: 'error',
-            text: 'Mohon memilih lebih dari satu universitas / jurusan'
-        });
-        return false;
+        return;
+    }else {
+        var data_id_universitas = $.parseJSON($.cookie('compare_univ_id'));
+        var data_id_jurusan = $.parseJSON($.cookie('compare_jurusan_id'));
+        if ((data_id_universitas.length === 1) || (data_id_jurusan.length === 1)) {
+            Swal.fire({
+                type: 'error',
+                text: 'Pilih minimal 2 universitas / jurusan terlebih dahulu'
+            });
+            return;
+        }
+        if ((data_id_universitas.length === 0) && (data_id_jurusan.length === 0)) {
+            Swal.fire({
+                type: 'error',
+                text: 'Daftar perbandingan tidak ada'
+            });
+            return;
+        }
     }
 
     $.redirect(urlAct, {'_token': token, 'var_id_universitas': data_id_universitas, 'var_id_jurusan': data_id_jurusan});
