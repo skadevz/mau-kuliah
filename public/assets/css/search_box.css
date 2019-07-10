@@ -177,6 +177,14 @@ label {
 .nama-universitas {
     font-family: "Roboto", sans-serif;
     font-size: 24px;
+    font-weight: normal;
+    color: #0b1033;
+}
+
+.nama-jurusan {
+    font-family: "Roboto", sans-serif;
+    font-size: 24px;
+    font-weight: normal;
     color: #0b1033;
 }
 
