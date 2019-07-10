@@ -165,7 +165,12 @@ function setUniversitasBanding() {
         $('.infobox-jurusan').before('<div id="disable_jurusan"></div>');
     }
     $.each(compare_list_img, function(key, val) {
-        $('<li class="item item-'+compare_list_id[key]+'" data-id="' + compare_list_id[key] + '"><div class="compare-product-info' + compare_list_id[key] + ' comparelist-flytab"><span class="close remove-compare" data-id="' + compare_list_id[key] + '"></span><div class="div-image"><img class="product-image" src="'+ val +'"></div><h4 class="product-title" data-name="' + compare_list_name[key] + '">'+compare_list_name[key]+'</h4></li>').appendTo('.comparison-ul');
+        $('<li class="item item-'+compare_list_id[key]+'" data-id="' + compare_list_id[key] + '">'+
+        '<div class="compare-product-info' + compare_list_id[key] + ' comparelist-flytab">'+
+        '<span class="close remove-compare" data-id="' + compare_list_id[key] + '"></span>'+
+        '<div class="div-image"><img class="product-image" src="'+ val +'"></div>'+
+        '<h4 class="product-title" data-name="' + compare_list_name[key] + '">'+compare_list_name[key]+'</h4>'+
+        '</li>').appendTo('.comparison-ul');
     });
 }
 
@@ -216,7 +221,7 @@ function getCompareJurusan(){
                 if ($.cookie('compare_jurusan_id') == undefined) {
                     $.cookie('compare_jurusan_id', JSON.stringify([data_id]));
                     $.cookie('compare_jurusan_name', JSON.stringify([data_name]));
-                    $.cookie('compare_jurusan_img', JSON.stringify([data_img]));
+                    $.cookie('compare_jurusan_img', JSON.stringify([data_img+'_'+data_id]));
 
                     $.cookie('compare_univ_id', JSON.stringify([]));
                     $.cookie('compare_univ_name', JSON.stringify([]));
@@ -227,7 +232,7 @@ function getCompareJurusan(){
                     var compare_list_img = $.parseJSON(cookie_compare_img);
                     compare_list_id.push(data_id);
                     compare_list_name.push(data_name);
-                    compare_list_img.push(data_img);
+                    compare_list_img.push(data_img+'_'+data_id);
 
                     $.cookie('compare_jurusan_id', JSON.stringify(compare_list_id));
                     $.cookie('compare_jurusan_name', JSON.stringify(compare_list_name));
@@ -255,7 +260,6 @@ function getCompareJurusan(){
 function removeJurusanBanding() {
     $('body').on('click', '.remove-compare-jur', function() {
         var data_id = $(this).data('id');
-        // console.log(data_id); return false;
         var data_name = $(this).parent().find('.product-title').text();
         var data_img = $(this).parent().find('.div-image > img').attr('src');
 
@@ -269,7 +273,8 @@ function removeElementCompareJurusan(data_id, data_name, data_img) {
     var compare_list_img = $.parseJSON($.cookie('compare_jurusan_img'));
     var removeItemId = data_id;
     var removeItemName = data_name;
-    var removeItemImg = data_img;
+    var removeItemImg = data_img+'_'+data_id;
+    console.log(removeItemImg);return;
 
     compare_list_id = jQuery.grep(compare_list_id, function(value) {
         return value != removeItemId;
@@ -327,8 +332,14 @@ function setJurusanBanding() {
         $('#comparison').addClass("close");
         $('.infobox-universitas').before('<div id="disable_universitas"></div>');
     }
-    $.each(compare_list_img, function(key, val) {
-        $('<li class="item item-'+compare_list_id[key]+'" data-id="' + compare_list_id[key] + '"><div class="compare-product-info' + compare_list_id[key] + ' comparelist-flytab"><span class="close remove-compare-jur" data-id="' + compare_list_id[key] + '"></span><div class="div-image"><img class="product-image" src="'+ val +'"></div><h4 class="product-title" data-name="' + compare_list_name[key] + '">'+compare_list_name[key]+'</h4></li>').appendTo('.comparison-ul');
+    $.each(compare_list_id, function(key, val) {
+        var val_img = compare_list_img[key].split("_");
+        $('<li class="item item-'+ val +'" data-id="' + val + '">'+
+        '<div class="compare-product-info' + val + ' comparelist-flytab">'+
+        '<span class="close remove-compare-jur" data-id="' + val + '"></span>'+
+        '<div class="div-image"><img class="product-image" src="'+ val_img[0] +'"></div>'+
+        '<h4 class="product-title" data-name="' + compare_list_name[key] + '">'+ compare_list_name[key] +'</h4>'+
+        '</li>').appendTo('.comparison-ul');
     });
 }
 
