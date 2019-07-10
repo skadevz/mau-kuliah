@@ -2,7 +2,7 @@
     <div class="container">
         <div class="row">
             @foreach ($jenjuruniv as $key => $value)
-                <div class="col-md list-block {{$value->id_universitas.'_'.$value->id_universitas}}">
+                <div class="col-md list-block {{$value['id_universitas'].'_'.$value['id_universitas']}}">
                     <span class="icon icon-af-Product_compare_Close list-block-del"></span>
                     <div class="list-img">
                         <img src="{{asset('assets/img/kampus/'. $value['logo'])}}">
@@ -23,7 +23,7 @@
                 <div class="data-wrap">
                     <div class="row">
                         @foreach ($jenjuruniv as $key => $value)
-                            <div class="list-compare-item col-md {{$value->id_universitas.'_'.$value->id_universitas}}">
+                            <div class="list-compare-item col-md {{$value['id_universitas'].'_'.$value['id_universitas']}}">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                             </div>
                         @endforeach
@@ -39,7 +39,7 @@
                 <div class="data-wrap">
                     <div class="row">
                         @foreach ($jenjuruniv as $key => $value)
-                            <div class="list-compare-item col-md {{$value->id_universitas.'_'.$value->id_universitas}}">
+                            <div class="list-compare-item col-md {{$value['id_universitas'].'_'.$value['id_universitas']}}">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                             </div>
                         @endforeach
@@ -55,7 +55,7 @@
                 <div class="data-wrap">
                     <div class="row">
                         @foreach ($jenjuruniv as $key => $value)
-                            <div class="list-compare-item col-md {{$value->id_universitas.'_'.$value->id_universitas}}">
+                            <div class="list-compare-item col-md {{$value['id_universitas'].'_'.$value['id_universitas']}}">
                                 Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
                             </div>
                         @endforeach
