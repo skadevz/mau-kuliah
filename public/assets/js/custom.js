@@ -13,17 +13,7 @@
         }
     });
 
-}(jQuery));
-var maxBanding = 3;
-
-// PROSES PENCARIAN
-function search(token) {
-    var urlAct = window.location.origin + '/search';
-    var value = $('.form-search').val();
-
-    $.redirect(urlAct, {'_token': token, 'value': value});
-}
-$(document).ready(function() {
+    var token =  $('meta[name="csrf-token"]').attr('content');
     $.ajaxSetup({
         headers: {
             'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
@@ -38,69 +28,21 @@ $(document).ready(function() {
     }
     if(isMobile == true) maxBanding = 2;
 
-    $('#select-lokasi-kampus').select2({
-        placeholder: "Lokasi Kampus",
-        width: 'resolve'
-    });
-    $('#select-tipe-kampus').select2({
-        placeholder: "Tipe Kampus",
-        width: 'resolve',
-        // theme: "classic"
-    });
-    $('#select-akreditasi-kampus').select2({
-        placeholder: "Akreditasi Kampus",
-        width: 'resolve',
-        // theme: "classic"
-    });
-    $('#select-sistem-perkuliahan').select2({
-        placeholder: "Sistem Perkuliahan",
-        width: 'resolve',
-        // theme: "classic"
+    $('.searchButton').on('click', function () {
+        search(token);
     });
 
-    // Grab whatever we need to paginate
-    var pagePartsUniversitas = $(".paginate-universitas");
-    var pagePartsJurusan = $(".paginate-jurusan");
-
-    // How many parts do we have?
-    var numPagesUniversitas = pagePartsUniversitas.length;
-    var numPagesJurusan = pagePartsJurusan.length;
-    // How many parts do we want per page?
-    var perPageUniversitas = 6;
-    var perPageJurusan = 5;
-
-    // When the document loads we're on page 1
-    // So to start with... hide everything else
-    pagePartsUniversitas.slice(perPageUniversitas).hide();
-    pagePartsJurusan.slice(perPageJurusan).hide();
-    // Apply simplePagination to our placeholder
-    $("#page-nav-universitas").pagination({
-        items: numPagesUniversitas,
-        itemsOnPage: perPageUniversitas,
-        cssStyle: "light-theme",
-        // We implement the actual pagination
-        //   in this next function. It runs on
-        //   the event that a user changes page
-        onPageClick: function (pageNum) {
-            // Which page parts do we show?
-            var start = perPageUniversitas * (pageNum - 1);
-            var end = start + perPageUniversitas;
-
-            // First hide all page parts
-            // Then show those just for our page
-            pagePartsUniversitas.hide()
-            .slice(start, end).show();
+    $('.form-search').keydown(function (e) {
+        if (e.keyCode == 13) {
+            search(token);
         }
     });
-    $("#page-nav-jurusan").pagination({
-        items: numPagesJurusan,
-        itemsOnPage: perPageJurusan,
-        cssStyle: "light-theme",
-        onPageClick: function (pageNum) {
-            var start = perPageJurusan * (pageNum - 1);
-            var end = start + perPageJurusan;
-            pagePartsJurusan.hide()
-            .slice(start, end).show();
-        }
-    });
-});
+}(jQuery));
+
+// PROSES PENCARIAN
+function search(token) {
+    var urlAct = window.location.origin + '/search';
+    var value = $('.form-search').val();
+
+    $.redirect(urlAct, {'_token': token, 'value': value});
+}

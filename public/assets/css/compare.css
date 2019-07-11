@@ -6,12 +6,13 @@
     display: inline-block;
     width: 88%;
 }
+
+
 .fly-name {
-    display: none;
     position: fixed;
     top: -85px;
     background: rgba(238, 238, 238, 0.89);
-    width: 100%;
+    width: 1170px;
     z-index: 9;
     height: 100px;
     border-bottom: 1px solid #FFF;
@@ -20,23 +21,45 @@
     -o-transition: all 0.5s ease 0s;
     transition: all 0.5s ease 0s;
 }
+
+@media (max-width: 576px) {
+    /* line 18, E:/172 Etrain Education/172_Etrain_Education_html/sass/_common.scss */
+    .fly-name{
+        max-width:381.2px
+    }
+}
+@media (min-width:576px){
+    .fly-name{
+        max-width:540px
+    }
+}
+@media (min-width:768px){
+    .fly-name{
+        max-width:720px
+    }
+}
+@media (min-width:992px){
+    .fly-name{
+        max-width:960px
+    }
+}
+@media (min-width:1200px){
+    .fly-name{
+        max-width:1140px
+    }
+}
+
 .fly-name-universitas {
     height: 80px !important;
 }
 .fly-name .list-compare-item{
     padding: 0px 0px 0px;
-    /*border-right: 1px solid #069FB3; */
     height: auto;
 }
 .fly-name .list-compare-item .kampus-name{
     color: #333;
     font-size: 9px;
-    /* vertical-align: middle; */
     height: 60px;
-    /* display: table; */
-    /* width: 100%; */
-    /* margin: 0px; */
-    /* text-align: left; */
     padding: 3px 10px 0px 10px;
 }
 .fly-name .list-compare-item .kampus-name span{
@@ -46,17 +69,9 @@
 }
 .fly-name .list-compare-item .kampus-name img{
     max-width: 40px;
-    /* vertical-align: middle;
-    display: table-cell;
-    margin-right: 10px;
-    float: left;margin-left: 0px;
-    max-height: 40px;
-    min-height; */
 }
 .fly-name.active {
     top: 85px;
-    position: sticky;
-    display: block;
 }
 .data-wrap{
     align-items: center;
@@ -87,11 +102,11 @@
     margin-bottom: 15px;
     margin-top: 15px;
 }
-.subhead-back {
+/* .subhead-back {
     position: relative;
     margin-top: 130px;
     margin-bottom: 30px;
-}
+} */
 
 .subhead h3{
     font-size:18px;
@@ -148,7 +163,6 @@
 .list-block .list-info .title {
     line-height: 2;
     font-weight: 500;
-    margin-top: 30px;
     font-size: 18px;
 }
 
@@ -163,24 +177,28 @@
     z-index: 3;
     opacity: 0;
     -webkit-transition: opacity 0.5s ease-in-out;
-       -moz-transition: opacity 0.5s ease-in-out;
-        -ms-transition: opacity 0.5s ease-in-out;
-         -o-transition: opacity 0.5s ease-in-out;
-            transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -ms-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
 }
 .list-block:hover .list-block-del {
     opacity: 1;
     -webkit-transition: opacity 0.5s ease-in-out;
-       -moz-transition: opacity 0.5s ease-in-out;
-        -ms-transition: opacity 0.5s ease-in-out;
-         -o-transition: opacity 0.5s ease-in-out;
-            transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -ms-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
 }
 .list-compare-item:hover .list-block-del {
     opacity: 1;
     -webkit-transition: opacity 0.5s ease-in-out;
-       -moz-transition: opacity 0.5s ease-in-out;
-        -ms-transition: opacity 0.5s ease-in-out;
-         -o-transition: opacity 0.5s ease-in-out;
-            transition: opacity 0.5s ease-in-out;
+    -moz-transition: opacity 0.5s ease-in-out;
+    -ms-transition: opacity 0.5s ease-in-out;
+    -o-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#section_perbandingan {
+    margin-top: -120px;
 }
