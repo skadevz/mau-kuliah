@@ -12,7 +12,7 @@ class Universitas extends Model
 
     public function jurusan()
     {
-        return $this->belongsToMany('App\Model\Master\Jurusan', 'pvt_jenjang_jurusan_universitas', 'id_universitas', 'id_jurusan')->withPivot('id_jenjang')->withPivot('akreditasi_jurusan');
+        return $this->belongsToMany('App\Model\Master\Jurusan', 'pvt_jenjang_jurusan_universitas', 'id_universitas', 'id_jurusan')->withPivot('id_jenjang');
     }
 
     public function fasilitas()

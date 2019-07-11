@@ -17,3 +17,5 @@ Route::group(['prefix' => 'location'], function () {
     Route::get('get-cities/{province_id}', 'API\LocationController@get_cities');
     Route::get('get-districts/{city_id}', 'API\LocationController@get_districts');
 });
+
+Route::get('get-major-detail/{univ_id}/{maj_id}/{deg_id}', 'API\UniversityController@get_major_detail');

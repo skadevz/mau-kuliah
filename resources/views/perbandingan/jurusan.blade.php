@@ -156,8 +156,31 @@
                 </div>
                 <div class="data-wrap">
                     <div class="row">
-                        <div class="list-compare-item col-md">
-                        </div>
+                        @foreach ($jenjuruniv as $key => $value)
+                            @php
+                                $biaya_kuliah = App\Model\BiayaKuliah::where('id_universitas', $value->id_universitas)->where('id_jurusan', $value->id_jurusan)->where('id_jenjang', $value->id_jenjang)->get();
+                            @endphp
+                            <div class="col-md div-{{$value->id_jurusan.'_'.$value->id_universitas}}">
+                                <div class="row">
+                                    <div class="col-md">
+                                        <table class="table">
+                                            <tbody>
+                                                @forelse ($biaya_kuliah as $key => $values)
+                                                    <tr>
+                                                        <th>{{ $values->nama }}</th>
+                                                        <td>Rp{{ number_format($values->biaya) }}</td>
+                                                    </tr>
+                                                @empty
+                                                    <tr>
+                                                        <td colspan="4">Data Tidak Ditemukan</td>
+                                                    </tr>
+                                                @endforelse
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                        @endforeach
                     </div>
                 </div>
             </div>

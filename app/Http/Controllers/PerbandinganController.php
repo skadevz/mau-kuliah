@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use App\Model\Master\Universitas;
 use App\Model\View\DataUniversitas;
 use App\Model\DetailJurusan;
+use App\Model\BiayaKuliah;
 
 class PerbandinganController extends Controller
 {
@@ -32,6 +33,7 @@ class PerbandinganController extends Controller
                                                             $data_universitas_tbl_name.".nama_universitas",
                                                             $data_universitas_tbl_name.".logo",
                                                             $data_universitas_tbl_name.".id_jurusan",
+                                                            $data_universitas_tbl_name.".id_jenjang",
                                                             $data_universitas_tbl_name.".nama_jurusan",
                                                             $detail_jurusan_tbl_name.".akreditasi_jurusan",
                                                             $data_universitas_tbl_name.".nama_jenjang",
