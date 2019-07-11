@@ -3031,6 +3031,22 @@ ul {
     padding-bottom: 0px !important;
 }
 
+.banner_part_perbandingan {
+    height: 300px;
+    position: relative;
+    overflow: hidden;
+    background-image: url(../img/undraw_file_searching_duff.svg);
+    background-repeat: no-repeat;
+    background-size:70%;
+    background-position: top right;
+    top: 130px;
+    right: 80px;
+}
+#header_back {
+    position: relative;
+    top: -150px;
+}
+
 @media (max-width: 576px) {
     /* line 2, E:/172 Etrain Education/172_Etrain_Education_html/sass/_banner.scss */
     .banner_part {
