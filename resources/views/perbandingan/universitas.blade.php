@@ -44,7 +44,7 @@
                 <div class="subhead">
                     <h3>Detail Universitas</h3>
                 </div>
-                <div class="data-wrap">
+                <div class="data-wrap p-3">
                     <div class="row">
                         @foreach ($m_universitas as $key => $data_universitas)
                             <div class="col-md div-{{$data_universitas->id_universitas}}">
@@ -100,7 +100,7 @@
                 <div class="subhead">
                     <h3>Jurusan</h3>
                 </div>
-                <div class="data-wrap">
+                <div class="data-wrap p-3">
                     <div class="row">
                         @foreach ($m_universitas as $key => $data_universitas)
                             <div class="col-md div-{{$data_universitas->id_universitas}}">
@@ -152,7 +152,7 @@
                 <div class="subhead">
                     <h3>Fasilitas</h3>
                 </div>
-                <div class="data-wrap">
+                <div class="data-wrap p-3">
                     <div class="row">
                         @foreach ($m_universitas as $key => $data_universitas)
                             <div class="col-md div-{{$data_universitas->id_universitas}}">
@@ -174,7 +174,7 @@
                 <div class="subhead">
                     <h3>Tempat Umum Terdekat</h3>
                 </div>
-                <div class="data-wrap">
+                <div class="data-wrap p-3">
                     <div class="row">
                         @foreach ($m_universitas as $key => $data_universitas)
                             <div class="col-md div-{{$data_universitas->id_universitas}}">

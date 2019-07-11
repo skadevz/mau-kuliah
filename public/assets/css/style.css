@@ -619,6 +619,11 @@ ul {
     box-shadow: 0px 12px 20px 0px rgba(255, 126, 95, 0.15);
 }
 
+.btn_selengkapnya {
+    margin-top: 15px;
+    padding: 5px 7px;
+    font-size: 12px;
+}
 
 /* line 38, E:/172 Etrain Education/172_Etrain_Education_html/sass/_button.scss */
 

@@ -49,7 +49,7 @@
                 <div class="subhead">
                     <h3>Detail Jurusan</h3>
                 </div>
-                <div class="data-wrap">
+                <div class="data-wrap p-3">
                     <div class="row">
                         @foreach ($jenjuruniv as $key => $value)
                             <div class="col-md div-{{$value->id_jurusan.'_'.$value->id_universitas}}">
@@ -96,12 +96,16 @@
                 <div class="subhead">
                     <h3>Profil Jurusan</h3>
                 </div>
-                <div class="data-wrap">
+                <div class="data-wrap p-3">
                     <div class="row">
                         @foreach ($jenjuruniv as $key => $value)
                             <div class="col-md div-{{$value->id_jurusan.'_'.$value->id_universitas}}">
-                                {{ $value->profil ? substr($value->profil, 0, 255) . '..' : 'N/A' }}
-                                <button type="button" class="btn btn-primary btn-sm mt-2" name="button">Lihat Selengkapnya</button>
+                                <div>
+                                    {{ $value->profil ? substr($value->profil, 0, 255) . '..' : 'N/A' }}
+                                </div>
+                                <center>
+                                    <button type="button" class="btn_1 btn_selengkapnya" name="button">Lihat Selengkapnya</button>
+                                </center>
                             </div>
                         @endforeach
                     </div>
@@ -113,7 +117,7 @@
                 <div class="subhead">
                     <h3>Tingkat Persaingan</h3>
                 </div>
-                <div class="data-wrap">
+                <div class="data-wrap p-3">
                     <div class="row">
                         @foreach ($jenjuruniv as $key => $value)
                             <div class="col-md div-{{$value->id_jurusan.'_'.$value->id_universitas}}">
