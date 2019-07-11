@@ -26,6 +26,7 @@ class PerbandinganController extends Controller
                 $var_jurusan_univeritas = explode('_',$dt_jurusan_univeritas);
                 $id_jurusan = $var_jurusan_univeritas[0];
                 $id_universitas = $var_jurusan_univeritas[1];
+                $id_jenjang = $var_jurusan_univeritas[2];
                 $data_jurusan = DataUniversitas::select(
                                                             $data_universitas_tbl_name.".id_universitas",
                                                             $data_universitas_tbl_name.".nama_universitas",
@@ -48,6 +49,7 @@ class PerbandinganController extends Controller
                                         ->on($data_universitas_tbl_name . '.id_jenjang', '=', $detail_jurusan_tbl_name . '.id_jenjang');
                                 })
                                 ->where($data_universitas_tbl_name . '.id_universitas', $id_universitas)
+                                ->where($data_universitas_tbl_name . '.id_jenjang', $id_jenjang)
                                 ->where($data_universitas_tbl_name . '.id_jurusan', $id_jurusan)->first();
                 $data['jenjuruniv'][] = $data_jurusan;
             }

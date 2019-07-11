@@ -18,7 +18,7 @@
                                             <td align="center" class="title" valign="middle"><span>{{$value->nama_universitas}}</span></td>
                                         </tr>
                                         <tr class="list-info">
-                                            <td align="center" class="title" valign="middle"><span>{{$value->nama_jurusan}}</span></td>
+                                            <td align="center" class="title" valign="middle"><span>{{$value->nama_jenjang." - ".$value->nama_jurusan}}</span></td>
                                         </tr>
                                     </tbody>
                                 </table>
@@ -38,7 +38,7 @@
                     </div>
                     <div class="list-info">
                         <div class="title">{{$value->nama_universitas}}</div>
-                        <div class="sub-title">{{$value->nama_jurusan}}</div>
+                        <div class="sub-title">{{$value->nama_jenjang." - ".$value->nama_jurusan}}</div>
                     </div>
                 </div>
             @endforeach

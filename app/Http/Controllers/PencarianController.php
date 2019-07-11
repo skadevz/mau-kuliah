@@ -24,6 +24,8 @@ class PencarianController extends Controller
         $detail_jurusan_tbl_name = $detail_jurusan_tbl->getTable();
         $jenjuruniv_tbl = new JenJurUniv();
         $jenjuruniv_tbl_name = $jenjuruniv_tbl->getTable();
+        $jenjang_tbl = new Jenjang();
+        $jenjang_tbl_name = $jenjang_tbl->getTable();
 
         $data['no'] = 1;
         $data['value'] = $request->input('value');
@@ -37,13 +39,14 @@ class PencarianController extends Controller
                             ->join($jenjuruniv_tbl_name, $universitas_tbl_name . '.id_universitas', '=', $jenjuruniv_tbl_name . '.id_universitas')
                             ->join($jurusan_tbl_name, $jenjuruniv_tbl_name . '.id_jurusan', '=', $jurusan_tbl_name . '.id_jurusan');
 
-        $data['m_jurusan'] = Jurusan::select($universitas_tbl_name . '.id_universitas', $jurusan_tbl_name . '.id_jurusan', 'nama_jurusan', 'akreditasi_jurusan', 'akreditasi_universitas', 'nama_universitas', 'logo')
+        $data['m_jurusan'] = Jurusan::select($universitas_tbl_name . '.id_universitas', $jurusan_tbl_name . '.id_jurusan', 'nama_jurusan', 'akreditasi_jurusan', 'akreditasi_universitas', 'nama_universitas', 'logo', 'nama_jenjang', $jenjang_tbl_name.'.id_jenjang')
                         ->join($jenjuruniv_tbl_name, $jurusan_tbl_name . '.id_jurusan', '=', $jenjuruniv_tbl_name . '.id_jurusan')
                         ->join($detail_jurusan_tbl_name, function ($join) use ($detail_jurusan_tbl_name, $jenjuruniv_tbl_name) {
                             $join->on($jenjuruniv_tbl_name . '.id_universitas', '=', $detail_jurusan_tbl_name . '.id_universitas')
                                 ->on($jenjuruniv_tbl_name . '.id_jurusan', '=', $detail_jurusan_tbl_name . '.id_jurusan')
                                 ->on($jenjuruniv_tbl_name . '.id_jenjang', '=', $detail_jurusan_tbl_name . '.id_jenjang');
                         })
+                        ->join($jenjang_tbl_name, $detail_jurusan_tbl_name . '.id_jenjang', '=', $jenjang_tbl_name . '.id_jenjang')
                         ->join($universitas_tbl_name, $jenjuruniv_tbl_name . '.id_universitas', '=', $universitas_tbl_name . '.id_universitas');
 
         if ($data['value'] != null) {

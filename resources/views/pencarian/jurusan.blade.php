@@ -4,7 +4,7 @@
         <div class="triangle-r"></div>
         <div class="infobox-jurusan">
             <h3><span>Bandingkan Jurusan</span></h3>
-            <p>
+            <p class="mt-4">
                 @forelse ($m_jurusan as $data_jurusan)
                     <div class="card shadow paginate-jurusan jurusan-list">
                         <div class="card-body">
@@ -15,7 +15,7 @@
                                     </div>
                                 </div>
                                 <div class="col-lg-9 col-md-12 col-xs-12 col-sm-12 content-kampus">
-                                    <h4 class="nama-jurusan">{{ $data_jurusan->nama_jurusan }}</h4>
+                                    <h4 class="nama-jurusan">{{ $data_jurusan->nama_jenjang." - ".$data_jurusan->nama_jurusan }}</h4>
                                     <span class="alamat-universitas">
                                         <i class="fa fa-map-marker"></i> {{ $data_jurusan->nama_universitas }}
                                     </span>
@@ -35,8 +35,8 @@
                                     <hr>
                                     <div class="custom-control custom-checkbox tombol-checkbox">
                                         <div class="fixer-container">
-                                            <input type="checkbox" class="custom-control-input box-compare-jurusan" value="{{$data_jurusan->id_jurusan.'_'.$data_jurusan->id_universitas}}" id="customCheck-{{$data_jurusan->id_jurusan.'_'.$data_jurusan->id_universitas}}">
-                                            <label class="custom-control-label" for="customCheck-{{$data_jurusan->id_jurusan.'_'.$data_jurusan->id_universitas}}">Bandingkan</label>
+                                            <input type="checkbox" class="custom-control-input box-compare-jurusan" value="{{$data_jurusan->id_jurusan.'_'.$data_jurusan->id_universitas.'_'.$data_jurusan->id_jenjang}}" id="customCheck-{{$data_jurusan->id_jurusan.'_'.$data_jurusan->id_universitas.'_'.$data_jurusan->id_jenjang}}">
+                                            <label class="custom-control-label" for="customCheck-{{$data_jurusan->id_jurusan.'_'.$data_jurusan->id_universitas.'_'.$data_jurusan->id_jenjang}}">Bandingkan</label>
                                         </div>
                                     </div>
                                 </div>
