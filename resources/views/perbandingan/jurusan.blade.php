@@ -4,8 +4,8 @@
             <div class="data-wrap">
                 <div class="row">
                     @foreach ($jenjuruniv as $key => $value)
-                        <div class="list-compare-item col-md div-{{$value->id_jurusan.'_'.$value->id_universitas}}">
-                            <span class="icon remove-compare-jurusan list-block-del" data-id="{{$value->id_jurusan.'_'.$value->id_universitas}}"></span>
+                        <div class="list-compare-item col-md div-{{$value->id_jurusan.'_'.$value->id_universitas.'_'.$value->id_jenjang}}">
+                            <span class="icon remove-compare-jurusan list-block-del" data-id="{{$value->id_jurusan.'_'.$value->id_universitas.'_'.$value->id_jenjang}}"></span>
                             <div class="kampus-name">
                                 <table style="height: 100%">
                                     <tbody>
@@ -31,8 +31,8 @@
         </div>
         <div class="row">
             @foreach ($jenjuruniv as $key => $value)
-                <div class="col-md list-block div-{{$value->id_jurusan.'_'.$value->id_universitas}}">
-                    <span class="icon remove-compare-jurusan list-block-del" data-id="{{$value->id_jurusan.'_'.$value->id_universitas}}"></span>
+                <div class="col-md list-block div-{{$value->id_jurusan.'_'.$value->id_universitas.'_'.$value->id_jenjang}}">
+                    <span class="icon remove-compare-jurusan list-block-del" data-id="{{$value->id_jurusan.'_'.$value->id_universitas.'_'.$value->id_jenjang}}"></span>
                     <div class="list-img">
                         <img src="{{asset('assets/img/kampus/'. $value->logo)}}">
                     </div>
@@ -52,7 +52,7 @@
                 <div class="data-wrap p-3">
                     <div class="row">
                         @foreach ($jenjuruniv as $key => $value)
-                            <div class="col-md div-{{$value->id_jurusan.'_'.$value->id_universitas}}">
+                            <div class="col-md div-{{$value->id_jurusan.'_'.$value->id_universitas.'_'.$value->id_jenjang}}">
                                 <div class="row">
                                     <div class="col-md-5 my-1" style="font-weight: bold;"><i class="fa fa-bolt"></i> Nama Universitas</div>
                                     <div class="col-md">{{ $value->nama_universitas }}</div>
@@ -99,7 +99,7 @@
                 <div class="data-wrap p-3">
                     <div class="row">
                         @foreach ($jenjuruniv as $key => $value)
-                            <div class="col-md div-{{$value->id_jurusan.'_'.$value->id_universitas}}">
+                            <div class="col-md div-{{$value->id_jurusan.'_'.$value->id_universitas.'_'.$value->id_jenjang}}">
                                 <div>
                                     {{ $value->profil ? substr($value->profil, 0, 255) . '..' : 'N/A' }}
                                 </div>
@@ -120,7 +120,7 @@
                 <div class="data-wrap p-3">
                     <div class="row">
                         @foreach ($jenjuruniv as $key => $value)
-                            <div class="col-md div-{{$value->id_jurusan.'_'.$value->id_universitas}}">
+                            <div class="col-md div-{{$value->id_jurusan.'_'.$value->id_universitas.'_'.$value->id_jenjang}}">
                                 <div class="row">
                                     <div class="col-md">
                                         <div class="row">
@@ -160,7 +160,7 @@
                             @php
                                 $biaya_kuliah = App\Model\BiayaKuliah::where('id_universitas', $value->id_universitas)->where('id_jurusan', $value->id_jurusan)->where('id_jenjang', $value->id_jenjang)->get();
                             @endphp
-                            <div class="col-md div-{{$value->id_jurusan.'_'.$value->id_universitas}}">
+                            <div class="col-md div-{{$value->id_jurusan.'_'.$value->id_universitas.'_'.$value->id_jenjang}}">
                                 <div class="row">
                                     <div class="col-md">
                                         <table class="table">

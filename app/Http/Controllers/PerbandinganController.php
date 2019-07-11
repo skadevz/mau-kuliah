@@ -29,37 +29,37 @@ class PerbandinganController extends Controller
                 $id_universitas = $var_jurusan_univeritas[1];
                 $id_jenjang = $var_jurusan_univeritas[2];
                 $data_jurusan = DataUniversitas::select(
-                                                            $data_universitas_tbl_name.".id_universitas",
-                                                            $data_universitas_tbl_name.".nama_universitas",
-                                                            $data_universitas_tbl_name.".logo",
-                                                            $data_universitas_tbl_name.".id_jurusan",
-                                                            $data_universitas_tbl_name.".id_jenjang",
-                                                            $data_universitas_tbl_name.".nama_jurusan",
-                                                            $detail_jurusan_tbl_name.".akreditasi_jurusan",
-                                                            $data_universitas_tbl_name.".nama_jenjang",
-                                                            "profil",
-                                                            "telepon_jurusan",
-                                                            "fax_jurusan",
-                                                            "email_jurusan",
-                                                            "website_jurusan",
-                                                            "daya_tampung",
-                                                            "jumlah_peminat"
-                                                        )
-                                ->leftJoin($detail_jurusan_tbl_name, function ($join) use($data_universitas_tbl_name, $detail_jurusan_tbl_name) {
-                                    $join->on($data_universitas_tbl_name . '.id_universitas', '=', $detail_jurusan_tbl_name . '.id_universitas')
-                                        ->on($data_universitas_tbl_name . '.id_jurusan', '=', $detail_jurusan_tbl_name . '.id_jurusan')
-                                        ->on($data_universitas_tbl_name . '.id_jenjang', '=', $detail_jurusan_tbl_name . '.id_jenjang');
-                                })
-                                ->where($data_universitas_tbl_name . '.id_universitas', $id_universitas)
-                                ->where($data_universitas_tbl_name . '.id_jenjang', $id_jenjang)
-                                ->where($data_universitas_tbl_name . '.id_jurusan', $id_jurusan)->first();
-                $data['jenjuruniv'][] = $data_jurusan;
+                    $data_universitas_tbl_name.".id_universitas",
+                    $data_universitas_tbl_name.".nama_universitas",
+                    $data_universitas_tbl_name.".logo",
+                    $data_universitas_tbl_name.".id_jurusan",
+                    $data_universitas_tbl_name.".id_jenjang",
+                    $data_universitas_tbl_name.".nama_jurusan",
+                    $detail_jurusan_tbl_name.".akreditasi_jurusan",
+                    $data_universitas_tbl_name.".nama_jenjang",
+                    "profil",
+                    "telepon_jurusan",
+                    "fax_jurusan",
+                    "email_jurusan",
+                    "website_jurusan",
+                    "daya_tampung",
+                    "jumlah_peminat"
+                    )
+                    ->leftJoin($detail_jurusan_tbl_name, function ($join) use($data_universitas_tbl_name, $detail_jurusan_tbl_name) {
+                        $join->on($data_universitas_tbl_name . '.id_universitas', '=', $detail_jurusan_tbl_name . '.id_universitas')
+                        ->on($data_universitas_tbl_name . '.id_jurusan', '=', $detail_jurusan_tbl_name . '.id_jurusan')
+                        ->on($data_universitas_tbl_name . '.id_jenjang', '=', $detail_jurusan_tbl_name . '.id_jenjang');
+                    })
+                    ->where($data_universitas_tbl_name . '.id_universitas', $id_universitas)
+                    ->where($data_universitas_tbl_name . '.id_jenjang', $id_jenjang)
+                    ->where($data_universitas_tbl_name . '.id_jurusan', $id_jurusan)->first();
+                    $data['jenjuruniv'][] = $data_jurusan;
+                }
+            }else{
+                //PERBANDINGAN UNIVERSITAS
+                $data['tampilan'] = 'universitas';
+                $data['m_universitas'] = Universitas::whereIn('id_universitas', $id_universitas)->get();
             }
-        }else{
-            //PERBANDINGAN UNIVERSITAS
-            $data['tampilan'] = 'universitas';
-            $data['m_universitas'] = Universitas::whereIn('id_universitas', $id_universitas)->get();
+            return view('perbandingan.index', $data);
         }
-        return view('perbandingan.index', $data);
     }
-}
