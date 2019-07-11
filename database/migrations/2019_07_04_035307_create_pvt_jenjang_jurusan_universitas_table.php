@@ -14,11 +14,11 @@ class CreatePvtJenjangJurusanUniversitasTable extends Migration
     public function up()
     {
         Schema::create('pvt_jenjang_jurusan_universitas', function (Blueprint $table) {
-            // $table->bigIncrements('id');
+            $table->bigIncrements('id');
             $table->unsignedInteger('id_jenjang');
             $table->unsignedInteger('id_jurusan');
             $table->unsignedInteger('id_universitas');
-            $table->char('akreditasi_jurusan', 1);
+            // $table->char('akreditasi_jurusan', 1);
             // $table->timestamps();
         });
     }

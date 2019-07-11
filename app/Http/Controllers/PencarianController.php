@@ -10,6 +10,7 @@ use App\Model\Master\Provinsi;
 use App\Model\Master\Kota;
 use App\Model\Master\Kecamatan;
 use App\Model\Pivot\JenJurUniv;
+use App\Model\DetailJurusan;
 
 class PencarianController extends Controller
 {
@@ -19,6 +20,8 @@ class PencarianController extends Controller
         $universitas_tbl_name = $universitas_tbl->getTable();
         $jurusan_tbl = new Jurusan();
         $jurusan_tbl_name = $jurusan_tbl->getTable();
+        $detail_jurusan_tbl = new DetailJurusan();
+        $detail_jurusan_tbl_name = $detail_jurusan_tbl->getTable();
         $jenjuruniv_tbl = new JenJurUniv();
         $jenjuruniv_tbl_name = $jenjuruniv_tbl->getTable();
 
@@ -36,6 +39,11 @@ class PencarianController extends Controller
 
         $data['m_jurusan'] = Jurusan::select($universitas_tbl_name . '.id_universitas', $jurusan_tbl_name . '.id_jurusan', 'nama_jurusan', 'akreditasi_jurusan', 'akreditasi_universitas', 'nama_universitas', 'logo')
                         ->join($jenjuruniv_tbl_name, $jurusan_tbl_name . '.id_jurusan', '=', $jenjuruniv_tbl_name . '.id_jurusan')
+                        ->join($detail_jurusan_tbl_name, function ($join) use ($detail_jurusan_tbl_name, $jenjuruniv_tbl_name) {
+                            $join->on($jenjuruniv_tbl_name . '.id_universitas', '=', $detail_jurusan_tbl_name . '.id_universitas')
+                                ->on($jenjuruniv_tbl_name . '.id_jurusan', '=', $detail_jurusan_tbl_name . '.id_jurusan')
+                                ->on($jenjuruniv_tbl_name . '.id_jenjang', '=', $detail_jurusan_tbl_name . '.id_jenjang');
+                        })
                         ->join($universitas_tbl_name, $jenjuruniv_tbl_name . '.id_universitas', '=', $universitas_tbl_name . '.id_universitas');
 
         if ($data['value'] != null) {

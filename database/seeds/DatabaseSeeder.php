@@ -18,6 +18,9 @@ class DatabaseSeeder extends Seeder
         $this->call(FasilitasTableSeeder::class);
         $this->call(TempatUmumTableSeeder::class);
 
+        $this->call(DetailJurusanTableSeeder::class);
+        $this->call(BiayaKuliahTableSeeder::class);
+
         $this->call(JenJurUnivTableSeeder::class);
         $this->call(FasUnivTableSeeder::class);
         $this->call(TemUUnivTableSeeder::class);
