@@ -98,7 +98,14 @@
             <div class="comparison-items">
                 <ul class="comparison-ul"></ul>
             </div>
-            <a class="go-to-compare" onclick="prosesSubmitBanding('{{route('perbandingan.index')}}', '{{ csrf_token() }}')">Bandingkan</a>
+            <div class="btn-group go-to-compare" role="group" aria-label="Basic example">
+              <button type="button" class="btn btn-info" onclick="prosesSubmitBanding('{{route('perbandingan.index')}}', '{{ csrf_token() }}')">
+                  Bandingkan
+              </button>
+              <button type="button" class="btn btn-danger" onclick="clearCookiesPerbandingan()">Clear</button>
+            </div>
+            {{-- <a class="go-to-compare" onclick="prosesSubmitBanding('{{route('perbandingan.index')}}', '{{ csrf_token() }}')">Bandingkan</a> --}}
+            {{-- <a class="go-to-clear" onclick="prosesSubmitBanding('{{route('perbandingan.index')}}', '{{ csrf_token() }}')">Clear</a> --}}
         </div>
     </div>
 @endsection
