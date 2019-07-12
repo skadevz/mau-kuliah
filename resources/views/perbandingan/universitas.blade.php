@@ -191,6 +191,28 @@
                 </div>
             </div>
         </div>
+        <div class="row">
+            <div class="col-md-12">
+                <div class="subhead">
+                    <h3>Beasiswa Tersedia</h3>
+                </div>
+                <div class="data-wrap">
+                    <div class="row">
+                        @for ($i = 0; $i < 4; $i++)
+                        <div class="col-lg-3 col-sm-6">
+                            <a href="">
+                                <div class="img-highlight" style="background-image:url({{ asset('assets/img/beasiswa/single_blog_1.png') }})"></div>
+                                <div class="text-slide">
+                                    <h4>Enthusiastically predominate standardized content without.</h4>
+                                    <p>Mereka tidak mau sekadar mengeluh atau meluapkan amarah ketika menemui masalah di lingkungan sekitar</p>
+                                </div>
+                            </a>
+                        </div>
+                        @endfor
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 </section>
 
@@ -316,7 +338,6 @@
                             </div>
                         </div>
                     </div>
-
                 </div>
             </div>
             <div class="modal-footer">

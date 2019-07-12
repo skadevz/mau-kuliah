@@ -105,7 +105,7 @@
                                                 <tr class="paginate-jurusan">
                                                     <th scope="row">{{ $key+1 }}</th>
                                                     <td>
-                                                        <a href="#" data-toggle="modal" data-target="#exampleModal">
+                                                        <a href="#" data-toggle="modal" data-target="#exampleModal" onclick="getDetailJurusan({{ $item->pivot->id_universitas }}, {{ $item->id_jurusan }}, {{ $item->pivot->id_jenjang }})">
                                                             {{ $item->nama_jurusan }}
                                                         </a>
                                                     </td>
@@ -172,11 +172,17 @@
                         </div>
                         <div class="data-wrap">
                             <div class="row">
-                                {{-- @foreach ($m_universitas as $key => $data_universitas) --}}
-                                    {{-- <div class="list-compare-item col-md div-{{$data_universitas->id_universitas}}"> --}}
-                                        {{-- Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. --}}
-                                    {{-- </div> --}}
-                                {{-- @endforeach --}}
+                                @for ($i = 0; $i < 4; $i++)
+                                <div class="col-lg-3 col-sm-6">
+                                    <a href="">
+                                        <div class="img-highlight" style="background-image:url({{ asset('assets/img/beasiswa/single_blog_1.png') }})"></div>
+                                        <div class="text-slide">
+                                            <h4>Enthusiastically predominate standardized content without.</h4>
+                                            <p>Mereka tidak mau sekadar mengeluh atau meluapkan amarah ketika menemui masalah di lingkungan sekitar</p>
+                                        </div>
+                                    </a>
+                                </div>
+                                @endfor
                             </div>
                         </div>
                     </div>
@@ -195,27 +201,119 @@
                         </button>
                     </div>
                     <div class="modal-body">
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.
-                        <table class="table">
-                            <thead>
-                                <tr>
-                                    <th scope="col">#</th>
-                                    <th scope="col">First</th>
-                                    <th scope="col">Last</th>
-                                    <th scope="col">Handle</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                @for ($i=0; $i < 10; $i++)
-                                    <tr>
-                                        <th scope="row">{{ $i + 1 }}</th>
-                                        <td>Mark</td>
-                                        <td>Otto</td>
-                                        <td>@mdo</td>
-                                    </tr>
-                                @endfor
-                            </tbody>
-                        </table>
+                        <div class="container">
+                            <div class="row mb-2">
+                                <div class="col-md" style="font-weight: bold;">
+                                    Nama Universitas
+                                </div>
+                                <div class="col-md" id="detail-nama-universitas">
+                                    -
+                                </div>
+                            </div>
+                            <div class="row my-2">
+                                <div class="col-md" style="font-weight: bold;">
+                                    Nama Jurusan
+                                </div>
+                                <div class="col-md" id="detail-nama-jurusan">
+                                    -
+                                </div>
+                            </div>
+                            <div class="row my-2">
+                                <div class="col-md" style="font-weight: bold;">
+                                    Jenjang
+                                </div>
+                                <div class="col-md" id="detail-jenjang">
+                                    -
+                                </div>
+                            </div>
+                            <div class="row my-2">
+                                <div class="col-md" style="font-weight: bold;">
+                                    Akreditas Jurusan
+                                </div>
+                                <div class="col-md" id="detail-akreditasi-jurusan">
+                                    -
+                                </div>
+                            </div>
+                            <div class="row my-2">
+                                <div class="col-md" style="font-weight: bold;">
+                                    Telepon Jurusan
+                                </div>
+                                <div class="col-md" id="detail-telepon-jurusan">
+                                    -
+                                </div>
+                            </div>
+                            <div class="row my-2">
+                                <div class="col-md" style="font-weight: bold;">
+                                    Fax Jurusan
+                                </div>
+                                <div class="col-md" id="detail-fax-jurusan">
+                                    -
+                                </div>
+                            </div>
+                            <div class="row my-2">
+                                <div class="col-md" style="font-weight: bold;">
+                                    Email Jurusan
+                                </div>
+                                <div class="col-md" id="detail-email-jurusan">
+                                    -
+                                </div>
+                            </div>
+                            <div class="row mt-2">
+                                <div class="col-md" style="font-weight: bold;">
+                                    Website Jurusan
+                                </div>
+                                <div class="col-md" id="detail-website-jurusan">
+                                    -
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row my-2">
+                                <div class="col-md">
+                                    <div class="row">
+                                        <div class="col-md">
+                                            <h4>
+                                                Profil Jurusan
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md" id="profil-jurusan">
+                                            -
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr>
+                            <div class="row my-2">
+                                <div class="col-md">
+                                    <div class="row">
+                                        <div class="col-md">
+                                            <h4>
+                                                Biaya Perkuliahan
+                                            </h4>
+                                        </div>
+                                    </div>
+                                    <div class="row">
+                                        <div class="col-md">
+                                            <table class="table">
+                                                <tbody>
+                                                    <table class="table" id="table-detail-biaya">
+                                                        <tbody>
+                                                            @for ($i=0; $i < 5; $i++)
+                                                                <tr>
+                                                                    <th>BPT</th>
+                                                                    <td>Rp{{ number_format(rand(10000000, 99999999)) }}</td>
+                                                                </tr>
+                                                            @endfor
+                                                        </tbody>
+                                                    </table>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
