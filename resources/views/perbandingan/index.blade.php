@@ -5,8 +5,14 @@
 @section('content')
     <section class="banner_part_perbandingan">&nbsp;</section>
     <div id="header_back" class="container">
-        <div class="subhead-back">
+        {{-- <div class="subhead-back">
             <a href="javascript:void(0)" onclick="window.history.back()"> < Kembali ke Halaman Pencarian </a>
+        </div> --}}
+        <div class="btn-group go-to-compare" role="group" aria-label="Basic example">
+          <button type="button" class="btn btn-info" onclick="window.history.back()">
+              <i class="fa fa-angle-double-left" aria-hidden="true"></i>
+          </button>
+          <button type="button" class="btn btn-light" onclick="window.history.back()">Kembali ke Halaman Pencarian</button>
         </div>
     </div>
     @include('perbandingan/'.$tampilan)

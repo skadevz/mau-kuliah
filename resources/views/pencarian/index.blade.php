@@ -40,6 +40,7 @@
                                     <option value="all">Semua Lokasi</option>
                                     @foreach ($m_lokasi as $item)
                                         <optgroup label="{{ $item->nama }}">
+                                            {{-- <option value="{{ $item->id_provinsi }}" selected>SEMUA PROV.{{ $item->nama }}</option> --}}
                                             @foreach ($item->kota as $kota)
                                                 <option value="{{ $kota->id_kota }}" @if($kota->id_kota == $lokasi_kampus) selected @endif>{{$kota->nama}}</option>
                                             @endforeach
@@ -102,7 +103,9 @@
               <button type="button" class="btn btn-info" onclick="prosesSubmitBanding('{{route('perbandingan.index')}}', '{{ csrf_token() }}')">
                   Bandingkan
               </button>
-              <button type="button" class="btn btn-danger" onclick="clearCookiesPerbandingan()">Clear</button>
+              <button type="button" class="btn btn-danger" onclick="clearCookiesPerbandingan()">
+                  Clear
+              </button>
             </div>
             {{-- <a class="go-to-compare" onclick="prosesSubmitBanding('{{route('perbandingan.index')}}', '{{ csrf_token() }}')">Bandingkan</a> --}}
             {{-- <a class="go-to-clear" onclick="prosesSubmitBanding('{{route('perbandingan.index')}}', '{{ csrf_token() }}')">Clear</a> --}}

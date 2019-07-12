@@ -10,7 +10,7 @@
 
 .fly-name {
     position: fixed;
-    top: -85px;
+    top: -105px;
     background: rgba(238, 238, 238, 0.89);
     width: 1170px;
     z-index: 9;
@@ -177,23 +177,14 @@
     position: absolute;
     cursor: pointer;
     z-index: 3;
-    opacity: 0;
+    /* opacity: 1;
     -webkit-transition: opacity 0.5s ease-in-out;
     -moz-transition: opacity 0.5s ease-in-out;
     -ms-transition: opacity 0.5s ease-in-out;
     -o-transition: opacity 0.5s ease-in-out;
-    transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out; */
 }
 .list-block:hover .list-block-del {
-    opacity: 1;
-    -webkit-transition: opacity 0.5s ease-in-out;
-    -moz-transition: opacity 0.5s ease-in-out;
-    -ms-transition: opacity 0.5s ease-in-out;
-    -o-transition: opacity 0.5s ease-in-out;
-    transition: opacity 0.5s ease-in-out;
-}
-.list-compare-item:hover .list-block-del {
-    opacity: 1;
     -webkit-transition: opacity 0.5s ease-in-out;
     -moz-transition: opacity 0.5s ease-in-out;
     -ms-transition: opacity 0.5s ease-in-out;
