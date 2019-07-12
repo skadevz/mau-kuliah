@@ -167,7 +167,11 @@
                                             <tbody>
                                                 @forelse ($biaya_kuliah as $key => $values)
                                                     <tr>
-                                                        <th>{{ $values->nama }}</th>
+                                                        <th>
+                                                            <span data-toggle="tooltip" data-placement="top" title="{{ $values->keterangan }}">
+                                                                {{ $values->nama }}
+                                                            </span>
+                                                        </th>
                                                         <td>Rp{{ number_format($values->biaya) }}</td>
                                                     </tr>
                                                 @empty
