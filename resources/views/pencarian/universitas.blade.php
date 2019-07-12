@@ -27,8 +27,8 @@
                                     <hr>
                                     <div class="custom-control custom-checkbox tombol-checkbox">
                                         <div class="fixer-container">
-                                            <input type="checkbox" class="custom-control-input box-compare-universitas" value="{{$data_universitas->id_universitas}}" id="customCheck-{{$data_universitas->id_universitas}}">
-                                            <label class="custom-control-label" for="customCheck-{{$data_universitas->id_universitas}}">Bandingkan</label>
+                                            <input style="cursor: pointer;" type="checkbox" class="custom-control-input box-compare-universitas" value="{{$data_universitas->id_universitas}}" id="customCheck-{{$data_universitas->id_universitas}}">
+                                            <label style="cursor: pointer;" class="custom-control-label" for="customCheck-{{$data_universitas->id_universitas}}">Bandingkan</label>
                                         </div>
                                     </div>
                                 </div>

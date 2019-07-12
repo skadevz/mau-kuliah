@@ -35,8 +35,8 @@
                                     <hr>
                                     <div class="custom-control custom-checkbox tombol-checkbox">
                                         <div class="fixer-container">
-                                            <input type="checkbox" class="custom-control-input box-compare-jurusan" value="{{$data_jurusan->id_jurusan.'_'.$data_jurusan->id_universitas.'_'.$data_jurusan->id_jenjang}}" id="customCheck-{{$data_jurusan->id_jurusan.'_'.$data_jurusan->id_universitas.'_'.$data_jurusan->id_jenjang}}">
-                                            <label class="custom-control-label" for="customCheck-{{$data_jurusan->id_jurusan.'_'.$data_jurusan->id_universitas.'_'.$data_jurusan->id_jenjang}}">Bandingkan</label>
+                                            <input style="cursor: pointer;" type="checkbox" class="custom-control-input box-compare-jurusan" value="{{$data_jurusan->id_jurusan.'_'.$data_jurusan->id_universitas.'_'.$data_jurusan->id_jenjang}}" id="customCheck-{{$data_jurusan->id_jurusan.'_'.$data_jurusan->id_universitas.'_'.$data_jurusan->id_jenjang}}">
+                                            <label style="cursor: pointer;" class="custom-control-label" for="customCheck-{{$data_jurusan->id_jurusan.'_'.$data_jurusan->id_universitas.'_'.$data_jurusan->id_jenjang}}">Bandingkan</label>
                                         </div>
                                     </div>
                                 </div>
