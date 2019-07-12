@@ -12,6 +12,7 @@
     transition: .3s all ease-in-out;
     position: relative;
     top: 0;
+    margin-bottom: 30px;
 }
 
 @media (max-width: 575px) {

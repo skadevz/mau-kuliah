@@ -83,7 +83,7 @@
                     <div class="img-highlight" style="background-image:url({{ asset('assets/img/beasiswa/single_blog_1.png') }})"></div>
                     <div class="text-slide">
                         <h4>Enthusiastically predominate standardized content without.</h4>
-                        <p>Mereka tidak mau sekadar mengeluh atau meluapkan amarah ketika menemui masalah di lingkungan sekitar. Memanfaatkan teknologi</p>
+                        <p>Mereka tidak mau sekadar mengeluh atau meluapkan amarah ketika menemui masalah di lingkungan sekitar</p>
                     </div>
                 </a>
             </div>
