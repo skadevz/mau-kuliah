@@ -98,19 +98,19 @@
                                                 <th scope="col">Nama</th>
                                                 <th scope="col">Jenjang</th>
                                                 <th scope="col">Akreditasi</th>
+                                                <th scope="col">Aksi</th>
                                             </tr>
                                         </thead>
                                         <tbody>
                                             @foreach ($universitas->jurusan()->orderBy('nama_jurusan')->get() as $key => $item)
                                                 <tr class="paginate-jurusan">
                                                     <th scope="row">{{ $key+1 }}</th>
-                                                    <td>
-                                                        <a href="#" data-toggle="modal" data-target="#exampleModal" onclick="getDetailJurusan({{ $item->pivot->id_universitas }}, {{ $item->id_jurusan }}, {{ $item->pivot->id_jenjang }})">
-                                                            {{ $item->nama_jurusan }}
-                                                        </a>
-                                                    </td>
+                                                    <td>{{ $item->nama_jurusan }}</td>
                                                     <td>{{ App\Model\Master\Jenjang::find($item->pivot->id_jenjang)->nama_jenjang }}</td>
-                                                    <td>{{ $item->pivot->akreditasi_jurusan }}</td>
+                                                    <td>{{ App\Model\DetailJurusan::where('id_universitas', $item->pivot->id_universitas)->where('id_jurusan', $item->pivot->id_jurusan)->where('id_jenjang', $item->pivot->id_jenjang)->first()->akreditasi_jurusan }}</td>
+                                                    <td>
+                                                        <button class="btn btn-primary btn-sm" type="button" data-toggle="modal" data-target="#exampleModal" onclick="getDetailJurusan({{ $item->pivot->id_universitas }}, {{ $item->id_jurusan }}, {{ $item->pivot->id_jenjang }})">Detail</button>
+                                                    </td>
                                                 </tr>
                                             @endforeach
                                         </tbody>
@@ -324,6 +324,7 @@
 @endsection
 
 @section('js')
+<script src="//cdnjs.cloudflare.com/ajax/libs/numeral.js/2.0.6/numeral.min.js"></script>
 <script type="text/javascript" src="{{ asset('assets/js/perbandingan.js') }}"></script>
 <script type="text/javascript">
     var pagePartsJurusan = $(".paginate-jurusan");
