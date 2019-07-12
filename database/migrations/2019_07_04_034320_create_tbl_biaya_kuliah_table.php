@@ -19,7 +19,7 @@ class CreateTblBiayaKuliahTable extends Migration
             $table->unsignedInteger('id_jurusan');
             $table->unsignedInteger('id_jenjang');
             $table->string('nama');
-            $table->string('keterangan');
+            $table->string('keterangan')->nullable();
             $table->integer('biaya');
             $table->string('jenis_pembayaran');
             $table->string('url_detail')->nullable();
