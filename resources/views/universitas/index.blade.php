@@ -192,7 +192,7 @@
 
 
         <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-            <div class="modal-dialog modal-dialog-centered" role="document">
+            <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLongTitle">Detail Jurusan</h5>
@@ -209,12 +209,26 @@
                                 <div class="col-md" id="detail-nama-universitas">
                                     -
                                 </div>
+
+                                <div class="col-md" style="font-weight: bold;">
+                                    Telepon Jurusan
+                                </div>
+                                <div class="col-md" id="detail-telepon-jurusan">
+                                    -
+                                </div>
                             </div>
                             <div class="row my-2">
                                 <div class="col-md" style="font-weight: bold;">
                                     Nama Jurusan
                                 </div>
                                 <div class="col-md" id="detail-nama-jurusan">
+                                    -
+                                </div>
+
+                                <div class="col-md" style="font-weight: bold;">
+                                    Fax Jurusan
+                                </div>
+                                <div class="col-md" id="detail-fax-jurusan">
                                     -
                                 </div>
                             </div>
@@ -225,6 +239,13 @@
                                 <div class="col-md" id="detail-jenjang">
                                     -
                                 </div>
+
+                                <div class="col-md" style="font-weight: bold;">
+                                    Email Jurusan
+                                </div>
+                                <div class="col-md" id="detail-email-jurusan">
+                                    -
+                                </div>
                             </div>
                             <div class="row my-2">
                                 <div class="col-md" style="font-weight: bold;">
@@ -233,32 +254,7 @@
                                 <div class="col-md" id="detail-akreditasi-jurusan">
                                     -
                                 </div>
-                            </div>
-                            <div class="row my-2">
-                                <div class="col-md" style="font-weight: bold;">
-                                    Telepon Jurusan
-                                </div>
-                                <div class="col-md" id="detail-telepon-jurusan">
-                                    -
-                                </div>
-                            </div>
-                            <div class="row my-2">
-                                <div class="col-md" style="font-weight: bold;">
-                                    Fax Jurusan
-                                </div>
-                                <div class="col-md" id="detail-fax-jurusan">
-                                    -
-                                </div>
-                            </div>
-                            <div class="row my-2">
-                                <div class="col-md" style="font-weight: bold;">
-                                    Email Jurusan
-                                </div>
-                                <div class="col-md" id="detail-email-jurusan">
-                                    -
-                                </div>
-                            </div>
-                            <div class="row mt-2">
+
                                 <div class="col-md" style="font-weight: bold;">
                                     Website Jurusan
                                 </div>
