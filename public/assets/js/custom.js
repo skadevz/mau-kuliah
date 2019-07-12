@@ -46,3 +46,7 @@ function search(token) {
 
     $.redirect(urlAct, {'_token': token, 'value': value});
 }
+
+$(function () {
+    $('[data-toggle="tooltip"]').tooltip();
+})
