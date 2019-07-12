@@ -77,18 +77,17 @@
             <h2 class="title__content">Info Beasiswa</h2>
         </div>
         <div class="row">
-            @foreach ($data_universitas as $item)
+            @for ($i = 0; $i < 7; $i++)
             <div class="col-lg-3 col-sm-6">
                 <a href="">
                     <div class="img-highlight" style="background-image:url({{ asset('assets/img/beasiswa/single_blog_1.png') }})"></div>
-
                     <div class="text-slide">
-                        <h4>{{$item->nama_universitas}}</h4>
-                        <p>{{$item->alamat_universitas}} Mereka tidak mau sekadar mengeluh atau meluapkan amarah ketika menemui masalah di lingkungan sekitar. Memanfaatkan teknologi</p>
+                        <h4>Enthusiastically predominate standardized content without.</h4>
+                        <p>Mereka tidak mau sekadar mengeluh atau meluapkan amarah ketika menemui masalah di lingkungan sekitar. Memanfaatkan teknologi</p>
                     </div>
                 </a>
             </div>
-            @endforeach
+            @endfor
         </div>
     </div>
 </section>
@@ -102,14 +101,14 @@
             <h2 class="title__content">Berita Kampus</h2>
         </div>
         <div class="row">
-            @foreach ($data_universitas as $item)
+            @for ($i = 0; $i < 8; $i++)
             <div class="col-lg-3 col-sm-6">
                 <div class="single-blog-post service">
                     <div class="top-text">
                         <time class="icon">
                             <em>Wednesday</em>
                             <strong>September</strong>
-                            <span>30</span>
+                            <span>{{ rand(1, 30) }}</span>
                         </time>
                     </div>
                     <div class="img-highlight" style="background-image:url({{ asset('assets/img/beasiswa/single_blog_1.png') }})"></div>
@@ -126,7 +125,7 @@
                     </div>
                 </div>
             </div>
-            @endforeach
+            @endfor
         </div>
     </div>
 </section>
